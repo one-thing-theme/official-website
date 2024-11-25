@@ -1,0 +1,53 @@
+@import '@flaticon/flaticon-uicons/css/all/all.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 0 0 98%;
+    --color-foreground: 0 0 0%;
+    --color-surface: 0 0 100%;
+    --color-border: 0 0 94%;
+    --color-input: 0 0 97%;
+    --color-primary: 0 0 0%;
+    --color-primary-foreground: 0 0 96%;
+    --color-secondary: 0 0 96%;
+    --color-secondary-foreground: 0 0 0%;
+    --color-destructive: 0 100% 50%;
+    --color-destructive-foreground: 210 40% 98%;
+  }
+
+  .dark {
+    --color-background: 0 0 5%;
+    --color-foreground: 0 0 90%;
+    --color-surface: 0 0 8%;
+    --color-border: 0 0 15%;
+    --color-input: 0 0 9%;
+    --color-primary: 0 0 98%;
+    --color-primary-foreground: 0 0 0%;
+    --color-secondary: 0 0 10%;
+    --color-secondary-foreground: 0 0 98%;
+    --color-destructive: 0 63% 31%;
+    --color-destructive-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply min-h-screen !text-sm tablet:!text-base font-normal text-foreground bg-background leading-normal !font-sans antialiased selection:bg-slate-100 dark:selection:bg-slate-100/10;
+    font-variation-settings: normal;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  .fi {
+    @apply flex justify-center items-center text-sm;
+  }
+}
