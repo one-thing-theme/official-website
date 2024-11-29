@@ -1,11 +1,19 @@
 import * as React from 'react'
 
-export function DynamicLogo(): React.ReactElement {
+interface DynamicLogoProps {
+  size?: number
+  className?: string
+}
+
+export function DynamicLogo({
+  className,
+  size = 60,
+}: DynamicLogoProps): React.ReactElement {
   return (
-    <div>
+    <div className={`${className}`}>
       <svg
-        width="60"
-        height="60"
+        width={size}
+        height={size}
         viewBox="0 0 60 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

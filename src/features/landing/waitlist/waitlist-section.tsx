@@ -8,7 +8,7 @@ import {
 } from '@shared/components/ui/tooltip'
 import Link from 'next/link'
 import { Meteors } from '@shared/components/ui/meteors'
-import { DynamicLogo } from '@shared/components/dynamic-logo'
+import { DynamicLogo } from '@shared/components/common/dynamic-logo'
 import { Spotlight } from '@shared/components/ui/spotlight'
 
 export function WaitlistSection(): React.ReactElement {

@@ -14,7 +14,7 @@ export function AnimationProvider({
   const lenisRef = React.useRef<any>()
 
   React.useEffect(() => {
-    function update(time) {
+    function update(time: any) {
       lenisRef.current?.lenis?.raf(time)
     }
 

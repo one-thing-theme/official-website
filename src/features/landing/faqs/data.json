@@ -1,0 +1,40 @@
+{
+  "faqs": [
+    {
+      "title": "What is brook code theme?",
+      "content": "A modern and aesthetically pleasing theme designed for code editors like VSCode, Zed, and JetBrains. It enhances code readability and aesthetics while providing seamless support for syntax highlighting."
+    },
+    {
+      "title": "What editors are supported?",
+      "content": "Currently, Brook Code Theme supports: Visual Studio Code (VSCode), Zed Editor, JetBrains IDEs (e.g., IntelliJ IDEA, WebStorm, PyCharm, etc.)It also supports code highlighting for markdown, blogs, or documentation tools. "
+    },
+    {
+      "title": "Is this theme free?",
+      "content": "Yes, Brook Code Theme is free to use. However, there may be premium features or variations in the future for enhanced customization."
+    },
+    {
+      "title": "How can i install the theme?",
+      "content": "You can install the theme by following the instructions provided in the documentation."
+    },
+    {
+      "title": "Does the theme support customizations?",
+      "content": "Yeah, you can customize the theme to your liking. Check the documentation for customization options."
+    },
+    {
+      "title": "What makes this theme unique?",
+      "content": "The theme built with simple colors that combine black, white and gray to create a clean and professional look. It also includes a dark mode for those who prefer a darker interface."
+    },
+    {
+      "title": "Can i contribute to the project?",
+      "content": "Yes, contributions are welcome! You can contribute by: Suggesting new features or improvements, Reporting bugs or inconsistencies, Submitting code updates or patches."
+    },
+    {
+      "title": "Are there plans for other editor support?",
+      "content": "Yes, future plans include expanding Brook Code Theme support to other popular editors and IDEs such as Sublime Text, Atom, and Vim. Let us know which editor you’d like to see supported next!"
+    },
+    {
+      "title": "How can I report an issue or give feedback?",
+      "content": "You can report issues or provide feedback by creating a new issue in the project's GitHub repository. We appreciate your input!"
+    }
+  ]
+}
