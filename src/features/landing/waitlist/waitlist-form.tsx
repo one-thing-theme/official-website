@@ -16,7 +16,7 @@ import { Input } from '@shared/components/ui/input'
 import { useMutation } from '@tanstack/react-query'
 import { showSonner } from '@shared/components/ui/sonner'
 import { SuccessWaitlistModal } from './success-waitlist-modal'
-import * as waitlistService from '../waitlist-service'
+import * as waitlistService from './waitlist-service'
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Please enter your name').max(50),

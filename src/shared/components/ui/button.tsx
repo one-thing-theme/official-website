@@ -12,7 +12,7 @@ const buttonVariants = cva(
         outline: 'border border-border bg-background text-foreground',
         text: 'text-foreground',
         secondary:
-          'bg-secondary text-secondary-foreground border border-transparent hover:bg-secondary/60 hover:border-border',
+          'bg-secondary text-secondary-foreground border hover:bg-secondary/60 border-border',
       },
       size: {
         base: 'h-11 px-4 rounded-xl',

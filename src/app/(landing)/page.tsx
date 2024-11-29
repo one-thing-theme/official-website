@@ -1,4 +1,13 @@
-import { WaitlistSection } from '@features/landing'
+import {
+  AboutSection,
+  CTASection,
+  FAQSection,
+  FeatureSection,
+  GallerySection,
+  HeroSection,
+  PricingSection,
+  TestimonialSection,
+} from '@features/landing'
 import * as defaultMetadata from '@shared/libs/shared-metadata'
 import { Metadata } from 'next'
 import * as React from 'react'
@@ -24,7 +33,14 @@ export const metadata: Metadata = {
 export default function LandingPage(): React.ReactElement {
   return (
     <main className="flex flex-col">
-      <WaitlistSection />
+      <HeroSection />
+      <FeatureSection />
+      <GallerySection />
+      <AboutSection />
+      <TestimonialSection />
+      <PricingSection />
+      <FAQSection />
+      <CTASection />
     </main>
   )
 }

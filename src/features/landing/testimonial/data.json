@@ -1,0 +1,24 @@
+{
+  "testimonials": [
+    {
+      "name": "Brooklyn Simmons",
+      "username": "brsimons",
+      "testimonial": "The color palette is vibrant but not overwhelming, making it perfect for long hours of work."
+    },
+    {
+      "name": "Darrell Steward",
+      "username": "darrellsstew",
+      "testimonial": "It strikes the perfect balance between aesthetics and readability. My code has never looked so organized and appealing!"
+    },
+    {
+      "name": "Devon Lane",
+      "username": "devonlanes99",
+      "testimonial": "I’ve tried dozens of themes, but nothing compares to the seamless blend of style and functionality offered by these themes. Ghost and Brook are now my go-to for VSCode and JetBrains."
+    },
+    {
+      "name": "Robert Fox",
+      "username": "robertfox33",
+      "testimonial": "The subtle contrasts and thoughtful design in Brook Code Theme are exceptional. Debugging has become a lot easier because I can identify issues quickly thanks to the clear color differentiation."
+    }
+  ]
+}

@@ -8,6 +8,9 @@ import { ThemeProvider } from '@shared/providers/theme-provider'
 import { QueryProvider } from '@shared/providers/query-provider'
 import { Sonner } from '@shared/components/ui/sonner'
 import { PosthogProvider } from '@shared/providers/posthog-provider'
+import { Header } from '@shared/components/common/header'
+import { Footer } from '@shared/components/common/footer'
+import { AnimationProvider } from '@shared/providers/animation-provider'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -47,24 +50,6 @@ export const metadata: Metadata = {
     description:
       'The best clean code editor theme that combine simplicity and clean look',
   },
-  icons: {
-    icon: [
-      {
-        rel: 'favicon',
-        url: '/images/favicon.ico',
-      },
-      {
-        rel: 'icon',
-        url: '/images/icon-light.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        rel: 'icon',
-        url: '/images/icon-dark.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-    ],
-  },
   metadataBase: new URL(config.app.host),
   verification: {
     google: config.verification.google,
@@ -77,23 +62,28 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <PosthogProvider>
-        <body
-          className={`${fonts.geistSans.variable} ${fonts.geistMono.variable}`}
-        >
-          <ThemeProvider
-            enableSystem
-            attribute={'class'}
-            defaultTheme="system"
-            disableTransitionOnChange
+        <AnimationProvider>
+          <body
+            className={`${fonts.geistSans.variable} ${fonts.geistMono.variable}`}
+            suppressHydrationWarning
           >
-            <QueryProvider>
-              <>
-                {children}
-                <Sonner />
-              </>
-            </QueryProvider>
-          </ThemeProvider>
-        </body>
+            <ThemeProvider
+              enableSystem
+              attribute={'class'}
+              defaultTheme="system"
+              disableTransitionOnChange
+            >
+              <QueryProvider>
+                <>
+                  <Header />
+                  {children}
+                  <Footer />
+                  <Sonner />
+                </>
+              </QueryProvider>
+            </ThemeProvider>
+          </body>
+        </AnimationProvider>
       </PosthogProvider>
     </html>
   )
