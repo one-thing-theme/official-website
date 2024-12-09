@@ -26,7 +26,7 @@
     "date-fns": "^4.1.0",
     "framer-motion": "^11.11.17",
     "lenis": "^1.1.16",
-    "next": "15.0.3",
+    "next": "15.0.4",
     "next-themes": "^0.4.3",
     "npm": "^10.9.1",
     "plaiceholder": "^3.0.0",
