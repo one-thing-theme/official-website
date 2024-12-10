@@ -1,9 +1,10 @@
 'use client'
+
 import * as React from 'react'
 import '@shared/styles/globals.css'
-import { Button } from '@shared/components/ui/button'
-import { ThemeProvider } from '@shared/providers/theme-provider'
-import * as fonts from '@shared/fonts'
+import { Button } from '@shared/components'
+import { ThemeProvider } from '@shared/providers'
+import { fonts } from '@shared/fonts'
 
 export default function GlobalError({
   reset,

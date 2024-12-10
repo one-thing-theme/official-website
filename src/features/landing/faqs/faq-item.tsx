@@ -2,7 +2,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@shared/components/ui/accordion'
+} from '@shared/components'
 import * as React from 'react'
 
 export interface FAQData {

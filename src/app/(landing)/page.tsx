@@ -8,7 +8,7 @@ import {
   PricingSection,
   TestimonialSection,
 } from '@features/landing'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { Metadata } from 'next'
 import * as React from 'react'
 
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   description:
     'The best clean code editor theme that combine simplicity and clean look',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Brook Code Theme',
     description:
       'The best clean code editor theme that combine simplicity and clean look',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Brook Code Theme',
     description:
       'The best clean code editor theme that combine simplicity and clean look',

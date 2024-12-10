@@ -1,4 +1,4 @@
-import { SectionLabel } from '@shared/components/common/section-label'
+import { SectionLabel } from '@shared/components'
 import * as React from 'react'
 import { ChangelogList } from './changelog-list'
 

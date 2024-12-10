@@ -1,12 +1,20 @@
-import { SectionLabel } from '@shared/components/common/section-label'
-import { Button } from '@shared/components/ui/button'
+'use client'
+
+import { Button, SectionLabel } from '@shared/components'
 import Link from 'next/link'
 import * as React from 'react'
+import { motion } from 'motion/react'
 
 export function PricingSection(): React.ReactElement {
   return (
     <section className="flex py-36 container mx-auto px-5 tablet:px-0">
-      <div className="flex flex-col items-center mx-auto w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 200, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
+        viewport={{ once: true, margin: '-20% 0px' }}
+        className="flex flex-col items-center mx-auto w-full"
+      >
         <SectionLabel>Pricing is shit</SectionLabel>
 
         <h2 className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
@@ -46,7 +54,7 @@ export function PricingSection(): React.ReactElement {
             </Link>
           </Button>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

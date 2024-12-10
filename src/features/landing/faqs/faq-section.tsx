@@ -1,15 +1,23 @@
-import { SectionLabel } from '@shared/components/common/section-label'
-import { Accordion } from '@shared/components/ui/accordion'
+'use client'
+
+import { SectionLabel, Accordion } from '@shared/components'
 import * as React from 'react'
 import { FAQData, FAQItem } from './faq-item'
 import jsonData from './data.json'
+import { motion } from 'motion/react'
 
 const faqs = jsonData.faqs as FAQData[]
 
 export function FAQSection(): React.ReactElement {
   return (
     <section className="flex py-12 tablet:py-36 container mx-auto px-5 tablet:px-0">
-      <div className="flex flex-col items-center mx-auto w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 200, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
+        viewport={{ once: true, margin: '-20% 0px' }}
+        className="flex flex-col items-center mx-auto w-full"
+      >
         <SectionLabel>FAQs</SectionLabel>
 
         <h2 className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
@@ -34,7 +42,7 @@ export function FAQSection(): React.ReactElement {
             </Accordion>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

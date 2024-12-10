@@ -1,4 +1,4 @@
-import { Button } from '@shared/components/ui/button'
+import { Button } from '@shared/components'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import * as React from 'react'

@@ -1,5 +1,5 @@
-import { ArticleContent } from '@shared/components/common/content'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { ArticleContent } from '@shared/components'
+import { sharedMetadata } from '@shared/libs'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import * as React from 'react'
@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Privacy policy',
   description: 'Read the privacy and policy',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Privacy policy',
     description: 'Read the privacy and policy',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Privacy policy',
     description: 'Read the privacy and policy',
   },

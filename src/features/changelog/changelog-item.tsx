@@ -1,6 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
+import { motion } from 'motion/react'
+
+const MotionLink = motion.create(Link)
 
 export interface ChangelogData {
   title: string
@@ -20,10 +25,14 @@ export function ChangelogItem({
   const { title, date, image, description, url } = data
 
   return (
-    <Link
+    <MotionLink
+      initial={{ opacity: 0, y: 200, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
+      viewport={{ once: true, margin: '-20% 0px' }}
       href={url}
       target="_blank"
-      className="flex flex-col gap-4 bg-surface border border-border rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 group"
+      className="flex flex-col gap-4 bg-surface border border-border rounded-2xl p-4 group"
     >
       <div className="flex flex-col tablet:flex-row gap-2 tablet:items-center justify-between">
         <span className="font-medium">{title}</span>
@@ -39,6 +48,6 @@ export function ChangelogItem({
       <p className="text-sm text-foreground/80 !leading-relaxed">
         {description}
       </p>
-    </Link>
+    </MotionLink>
   )
 }

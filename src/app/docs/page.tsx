@@ -1,4 +1,4 @@
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { Metadata } from 'next'
 import * as React from 'react'
 
@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Read the docs to find the tips and tricks to get started with brook code theme',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Docs',
     description:
       'Read the docs to find the tips and tricks to get started with brook code theme',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Docs',
     description:
       'Read the docs to find the tips and tricks to get started with brook code theme',

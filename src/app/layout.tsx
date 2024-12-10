@@ -1,16 +1,14 @@
 import * as React from 'react'
 import type { Metadata } from 'next'
 import '@shared/styles/globals.css'
-import * as fonts from '@shared/fonts'
-import config from '@shared/libs/config'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
-import { ThemeProvider } from '@shared/providers/theme-provider'
-import { QueryProvider } from '@shared/providers/query-provider'
-import { Sonner } from '@shared/components/ui/sonner'
-import { PosthogProvider } from '@shared/providers/posthog-provider'
-import { Header } from '@shared/components/common/header'
-import { Footer } from '@shared/components/common/footer'
-import { AnimationProvider } from '@shared/providers/animation-provider'
+import { fonts } from '@shared/fonts'
+import { config, sharedMetadata } from '@shared/libs'
+import {
+  PosthogProvider,
+  AnimationProvider,
+  ThemeProvider,
+} from '@shared/providers'
+import { Header, Sonner, Footer } from '@shared/components'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -39,13 +37,13 @@ export const metadata: Metadata = {
   publisher: 'Nyoman Sunima',
   creator: 'Nyoman Sunima',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Brook Code Theme',
     description:
       'The best clean code editor theme that combine simplicity and clean look',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Brook Code Theme',
     description:
       'The best clean code editor theme that combine simplicity and clean look',
@@ -73,14 +71,10 @@ export default function RootLayout({
               defaultTheme="system"
               disableTransitionOnChange
             >
-              <QueryProvider>
-                <>
-                  <Header />
-                  {children}
-                  <Footer />
-                  <Sonner />
-                </>
-              </QueryProvider>
+              <Header />
+              {children}
+              <Footer />
+              <Sonner />
             </ThemeProvider>
           </body>
         </AnimationProvider>

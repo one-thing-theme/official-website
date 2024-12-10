@@ -1,7 +1,10 @@
+'use client'
+
 import * as React from 'react'
 import { DynamicLogo } from './dynamic-logo'
 import { NavigationItem } from './navigation-link'
 import Link from 'next/link'
+import { useMotionValueEvent, useScroll, motion } from 'motion/react'
 
 interface ProductsNavigationItemProps {
   children: React.ReactNode
@@ -89,11 +92,25 @@ function Actions(): React.ReactElement {
 }
 
 export function Header(): React.ReactElement {
+  const { scrollY } = useScroll()
+  const [scrollDirection, setScrollDirection] = React.useState<'up' | 'down'>(
+    'down',
+  )
+
+  useMotionValueEvent(scrollY, 'change', (progress) => {
+    const diff = progress - (scrollY.getPrevious() || 0)
+    setScrollDirection(diff > 0 ? 'down' : 'up')
+  })
+
   return (
-    <header className="flex fixed top-4 tablet:top-6 inset-x-3 tablet:inset-x-10 z-50 justify-between">
+    <motion.header
+      transition={{ type: 'spring', duration: 1.2 }}
+      animate={{ y: scrollDirection === 'down' ? -200 : 0 }}
+      className="flex fixed top-4 tablet:top-6 inset-x-3 tablet:inset-x-10 z-50 justify-between"
+    >
       <Brand />
       <Navigation />
       <Actions />
-    </header>
+    </motion.header>
   )
 }
