@@ -4,86 +4,190 @@ description: Setup the editor more simple and focus for productivity
 publishedAt: 2024-12-19
 ---
 
-Brook Code Theme is your ultimate companion for an elegant and productive coding experience. Designed with developers in mind, this theme brings a **clean**, **balanced**, and **visually appealing** look to your favorite code editors.
+This guide is optional, this guide based on the productivity and simplicity of the editor. You can simplify all feature and make it become a tools that can be used to become more productive while work on your projects.
 
-## 🌟 Why Brook Code Theme?
+This step are recommended if you're a advance user and also need to make sure you're become less distraction from your code editor ui and work.
 
-Brook Code Theme stands out by offering:
+## Zed Editor
 
-- **Elegant Syntax Highlighting**
-  Say goodbye to cluttered code. Enjoy a balanced color palette that improves readability and keeps your focus intact during long coding sessions.
+You can copy this configuration into your Zed Editor settings to make it more simple and focus for productivity.
 
-- **Dark and Light Modes**
-  Switch effortlessly between dark and light themes to match your coding environment and preference.
+```json
+// Zed settings
+//
+// For information on how to configure Zed: true see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "features": {
+    "inline_completion_provider": "supermaven",
+    "copilot": false
+  },
 
-- **Multi-Editor Support**
-  Compatible with popular editors, including:
+  // theme, icons, tweaks
+  "theme": {
+    "mode": "system",
+    "light": "Brook Code Light",
+    "dark": "Brook Code Dark"
+  },
 
-  - **VSCode**
+  // user interfaces settings
+  "ui_font_family": ".SystemUIFont",
+  "ui_font_size": 14.5,
+  "format_on_save": "on",
+  "formatter": "auto",
+  "ui_font_features": {
+    "ss01": true,
+    "ss02": true,
+    "ss03": true,
+    "ss04": true,
+    "ss05": true,
+    "ss06": true,
+    "zero": true,
+    "onum": true,
+    "calt": true
+  },
+  "assistant": {
+    "dock": "right",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-1.5-pro"
+    },
+    "version": "2"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "left",
+    "indent_guides": {
+      "show": "never"
+    },
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "chat_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "left",
+    "git_status": false,
+    "auto_fold_dirs": false,
+    "indent_guides": {
+      "show": "never"
+    },
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "tabs": {
+    "file_icons": false,
+    "git_status": false
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_code_navigation": true,
+    "enable_preview_from_file_finder": true
+  },
+  "tab_bar": {
+    "show": false,
+    "show_nav_history_buttons": false
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "file_finder": {
+    "modal_max_width": "medium",
+    "file_icons": false
+  },
+  "indent_guides": {
+    "enabled": false
+  },
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "font_size": 12,
+    "font_weight": 600,
+    "dock": "bottom",
+    "cursor_shape": "underline",
+    "blinking": "on",
+    "copy_on_select": false
+  },
+  "show_user_picture": false,
 
-- **JetBrains IDEs**
+  // buffer, editor settings
+  "buffer_font_size": 12.5,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_weight": 600,
+  "buffer_font_features": {
+    "ss01": true,
+    "ss02": true,
+    "ss03": true,
+    "ss04": true,
+    "ss05": true,
+    "ss06": true,
+    "zero": true,
+    "onum": true,
+    "calt": true
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "current_line_highlight": "none",
+  "show_inline_completions": true,
+  "inlay_hints": {
+    "enabled": true,
+    "show_other_hints": false,
+    "show_parameter_hints": false,
+    "show_type_hints": false
+  },
+  "gutter": {
+    "code_actions": false,
+    "folds": true,
+    "line_numbers": false,
+    "runnables": false
+  },
+  "cursor_shape": "underline",
+  "soft_wrap": "editor_width",
+  "git": {
+    "git_gutter": "hide",
+    "gutter_debounce": null,
+    "inline_blame": {
+      "enabled": false
+    }
+  },
 
-  - **Zed**
-  - And more!
+  // extension & managements
+  // "file_scan_inclusions": [],
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.next",
+    "**/.vercel",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    // "**/.vscode",
+    "**/node_modules"
+  ],
+  "file_types": {
+    "JSON": [".prettierrc"],
+    "Markdown": ["LICENSE"]
+  },
 
-- **Language Versatility**
-  Optimized for a wide range of programming languages, including:
-  - **JavaScript**, **TypeScript**, **Python**, **Go**, **Rust**, **HTML**, and **CSS**.
-
-## 🎨 Key Features
-
-1. **Aesthetic Design**
-   Enjoy a polished theme with carefully selected colors that are easy on the eyes.
-
-2. **Focus-Driven Color Palette**
-   Each color is chosen to emphasize the structure and syntax of your code, reducing cognitive load and improving productivity.
-
-3. **Flexible Variants**
-   Choose between subtle pastel tones or vibrant colors to suit your coding style.
-
-4. **Cross-Platform Compatibility**
-   Works seamlessly across multiple platforms and editors for a consistent experience.
-
-## 🚀 Installation Guide
-
-### For VSCode
-
-1. Open the Extensions Marketplace.
-2. Search for **Brook Code Theme**.
-3. Click "Install" and select the theme from your settings.
-
-### For JetBrains IDEs
-
-1. Download the theme file from the official website (coming soon!).
-2. Import the theme in **Preferences > Appearance & Behavior > Themes**.
-3. Apply the theme and start coding.
-
-### For Zed
-
-1. Follow the Zed documentation for custom theme installation.
-2. Copy the Brook Code Theme configuration file.
-3. Activate the theme in Zed.
-
-## 📸 Preview
-
-Here’s a sneak peek of Brook Code Theme in action:
-
-- **Dark Mode**: A moody, elegant theme with perfect contrast.
-- **Light Mode**: Bright and vibrant for daylight coding sessions.
-
-_Full previews and live demos will be available on our official website._
-
-## ✨ Future Plans
-
-Brook Code Theme is evolving! Here’s what’s next:
-
-- **More Editor Support**: Expand compatibility to editors like Sublime Text and Atom.
-- **Terminal Themes**: Matching themes for terminal applications like iTerm2 and Warp.
-- **Customizable Options**: Tools to tweak the theme and make it truly yours.
-
-Brook Code Theme is designed to enhance your coding experience, whether you're
-building apps, writing scripts, or crafting web designs.
-
-**Get ready to code in style. Let Brook Code Theme be your go-to choice for a seamless coding environment!**
-
-Stay tuned for updates, or follow us on [GitHub](#) for the latest releases.
+  // Languages specific settings
+  // used to settings the languages configurations including formatter, linter, etc.
+  "languages": {
+    "Markdown": {
+      // "format_on_save": "on"
+    }
+  }
+}
+```

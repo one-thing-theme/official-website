@@ -8,7 +8,7 @@ export function ChangelogSection(): React.ReactElement {
       <div className="flex flex-col items-center mx-auto w-full">
         <SectionLabel>What’s new</SectionLabel>
 
-        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
+        <h2 className="text-xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
           Changelog
         </h2>
 

@@ -14,7 +14,7 @@ export async function TableOfContent({
 
   return (
     <div className="flex flex-col w-full">
-      <span className="text-sm px-3">On this page</span>
+      <span className="text-sm px-3 font-medium">On this page</span>
 
       <div className="flex flex-col text-sm w-full mt-3">
         <ul className="flex flex-col w-full">

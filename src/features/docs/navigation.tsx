@@ -42,10 +42,6 @@ const navigations: Navigation[] = [
     group: 'Guides',
     list: [
       {
-        label: 'Simplify Looks',
-        link: '/docs/simplify-looks',
-      },
-      {
         label: 'Setup Clean Editor',
         link: '/docs/setup-clean-editor',
       },
@@ -77,7 +73,7 @@ function NavigationGroup({ group }: NavigationGroupProps): React.ReactElement {
 
   return (
     <div className="flex flex-col text-sm gap-3">
-      <span className="ml-3">{groupName}</span>
+      <span className="ml-3 font-medium">{groupName}</span>
       <ul className="flex flex-col w-full">
         {list.map((item, index) => (
           <NavigationItem key={index} item={item} />
