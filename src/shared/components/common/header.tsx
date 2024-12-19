@@ -53,7 +53,7 @@ function ProductsNavigationItem({
 
 function Navigation(): React.ReactElement {
   return (
-    <nav className="hidden tablet:flex items-center h-12 bg-surface border border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1">
+    <nav className="hidden laptop:flex items-center h-12 bg-surface border border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1">
       <ul className="flex items-center gap-7">
         <ProductsNavigationItem>Products</ProductsNavigationItem>
         <NavigationItem href="/changelog">What's new</NavigationItem>
@@ -94,7 +94,7 @@ function Actions(): React.ReactElement {
 export function Header(): React.ReactElement {
   const { scrollY } = useScroll()
   const [scrollDirection, setScrollDirection] = React.useState<'up' | 'down'>(
-    'down',
+    'up',
   )
 
   useMotionValueEvent(scrollY, 'change', (progress) => {

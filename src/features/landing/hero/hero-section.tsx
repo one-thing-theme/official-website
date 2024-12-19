@@ -1,14 +1,24 @@
 'use client'
 
-import { SectionLabel, Button } from '@shared/components'
+import { SectionLabel, Button, Meteors } from '@shared/components'
 import * as React from 'react'
 import { ImageShot } from './image-shot'
 import { motion } from 'motion/react'
+import { useLenis } from 'lenis/react'
 
 export function HeroSection(): React.ReactElement {
+  const lenis = useLenis()
+
+  const goToGetStarted = () => {
+    lenis?.scrollTo('#get-started')
+  }
+
   return (
-    <section className="flex py-36 container mx-auto px-5 tablet:px-0">
-      <div className="flex flex-col items-center mx-auto w-full">
+    <section
+      className="flex py-36 container mx-auto px-5 tablet:px-0 relative"
+      suppressHydrationWarning
+    >
+      <div className="flex flex-col items-center mx-auto w-full relative z-30">
         <SectionLabel>New Release: Zed Theme</SectionLabel>
 
         <motion.h2
@@ -40,7 +50,10 @@ export function HeroSection(): React.ReactElement {
           viewport={{ once: true, margin: '-20% 0px' }}
           className="flex items-center mt-16"
         >
-          <Button className="transition-all duration-300 hover:-translate-y-1">
+          <Button
+            className="transition-all duration-300 hover:-translate-y-1"
+            onClick={goToGetStarted}
+          >
             Download Now
             <i className="fi fi-rr-arrow-right" />
           </Button>
@@ -50,6 +63,8 @@ export function HeroSection(): React.ReactElement {
           <ImageShot />
         </div>
       </div>
+
+      <Meteors />
     </section>
   )
 }
