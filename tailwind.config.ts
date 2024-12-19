@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontSize: {
-        base: '.935rem',
+        base: '.9375rem',
       },
       colors: {
         background: 'hsl(var(--color-background))',

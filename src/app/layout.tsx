@@ -58,13 +58,14 @@ export default function RootLayout({
   children,
 }: Readonly<RootLayoutProps>): React.ReactElement {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${fonts.geistSans.variable} ${fonts.geistMono.variable}`}
+    >
       <PosthogProvider>
         <AnimationProvider>
-          <body
-            className={`${fonts.geistSans.variable} ${fonts.geistMono.variable}`}
-            suppressHydrationWarning
-          >
+          <body suppressHydrationWarning>
             <ThemeProvider
               enableSystem
               attribute={'class'}

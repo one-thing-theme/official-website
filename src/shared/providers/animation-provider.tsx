@@ -11,7 +11,7 @@ interface AnimationProviderProps {
 export function AnimationProvider({
   children,
 }: AnimationProviderProps): React.ReactElement {
-  const lenisRef = React.useRef<any>()
+  const lenisRef = React.useRef<any>(null)
 
   React.useEffect(() => {
     function update(time: any) {

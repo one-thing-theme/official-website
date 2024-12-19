@@ -40,7 +40,7 @@
   }
 
   body {
-    @apply min-h-screen !text-sm tablet:!text-base font-normal text-foreground bg-background leading-normal !font-sans antialiased selection:bg-slate-100 dark:selection:bg-slate-100/10;
+    @apply min-h-screen !text-sm tablet:!text-base font-normal text-foreground bg-background leading-normal !font-sans subpixel-antialiased selection:bg-slate-100 dark:selection:bg-slate-100/10;
     font-variation-settings: normal;
     font-feature-settings:
       'rlig' 1,
