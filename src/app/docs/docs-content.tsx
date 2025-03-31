@@ -14,7 +14,7 @@ export async function DocsContent({
     <article className="flex flex-col">
       <ArticleContent>
         <h1>{frontmatter.title}</h1>
-        <p className="text-foreground/60 !-mt-2">{frontmatter.description}</p>
+        <p className="text-foreground/60 -mt-2!">{frontmatter.description}</p>
         {content}
       </ArticleContent>
     </article>

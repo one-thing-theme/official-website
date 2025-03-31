@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { mergeClass } from '@shared/utils/helpers'
 
 const buttonVariants = cva(
-  'flex items-center justify-center font-medium whitespace-nowrap text-sm !leading-none transition-all duration-300 gap-2 group relative',
+  'flex items-center justify-center font-medium whitespace-nowrap text-sm leading-none! transition-all duration-300 gap-2 group relative',
   {
     variants: {
       variant: {

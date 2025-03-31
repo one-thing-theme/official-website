@@ -23,7 +23,7 @@ export function TestimonialItem({
           <span className="text-foreground/60">@{username}</span>
         </div>
       </div>
-      <p className="text-foreground/80 !leading-relaxed line-clamp-3 text-pretty mt-4">
+      <p className="text-foreground/80 leading-relaxed! line-clamp-3 text-pretty mt-4">
         {testimonial}
       </p>
     </div>

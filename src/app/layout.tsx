@@ -1,13 +1,8 @@
 import * as React from 'react'
 import type { Metadata } from 'next'
 import '@shared/styles/globals.css'
-import { fonts } from '@shared/fonts'
-import { config, sharedMetadata } from '@shared/libs'
-import {
-  PosthogProvider,
-  AnimationProvider,
-  ThemeProvider,
-} from '@shared/providers'
+import { config, sharedMetadata, fonts } from '@shared/libs'
+import { PosthogProvider, AnimationProvider } from '@shared/providers'
 import { Header, Sonner, Footer } from '@shared/components'
 
 interface RootLayoutProps {
@@ -15,15 +10,13 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: 'Brook Code Theme',
+  title: 'One Thing Theme',
   description:
     'The best clean code editor theme that combine simplicity and clean look',
-  applicationName: 'Brook Code Theme',
+  applicationName: 'One Thing Theme',
   alternates: {},
   keywords: [
-    'Brook Code Theme',
-    'Brook Code',
-    'Brook',
+    'One Thing Theme',
     'Code',
     'Theme',
     'Editor',
@@ -38,13 +31,13 @@ export const metadata: Metadata = {
   creator: 'Nyoman Sunima',
   openGraph: {
     ...sharedMetadata.openGraph,
-    title: 'Brook Code Theme',
+    title: 'Minimal & Simple productivity Theme | One Thing Theme',
     description:
       'The best clean code editor theme that combine simplicity and clean look',
   },
   twitter: {
     ...sharedMetadata.twitter,
-    title: 'Brook Code Theme',
+    title: 'Minimal & Simple productivity Theme | One Thing Theme',
     description:
       'The best clean code editor theme that combine simplicity and clean look',
   },
@@ -61,22 +54,15 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fonts.geistSans.variable} ${fonts.geistMono.variable}`}
+      className={`${fonts.inter.variable} ${fonts.jetBrainsMono.variable}`}
     >
       <PosthogProvider>
         <AnimationProvider>
           <body suppressHydrationWarning>
-            <ThemeProvider
-              enableSystem
-              attribute={'class'}
-              defaultTheme="system"
-              disableTransitionOnChange
-            >
-              <Header />
-              {children}
-              <Footer />
-              <Sonner />
-            </ThemeProvider>
+            <Header />
+            {children}
+            <Footer />
+            <Sonner />
           </body>
         </AnimationProvider>
       </PosthogProvider>

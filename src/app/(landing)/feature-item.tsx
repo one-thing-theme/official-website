@@ -18,8 +18,8 @@ export function FeatureItem({ data }: FeatureItemProps): React.ReactElement {
       <span className="absolute -left-0.5 top-3 h-6 border-l-2 border-primary z-10" />
 
       <i className={`${icon} text-xl`} />
-      <span className="mt-5 font-medium !leading-tight">{title}</span>
-      <p className="!leading-relaxed text-foreground/60 text-pretty mt-3">
+      <span className="mt-5 font-medium leading-tight!">{title}</span>
+      <p className="leading-relaxed! text-foreground/60 text-pretty mt-3">
         {description}
       </p>
       <p></p>

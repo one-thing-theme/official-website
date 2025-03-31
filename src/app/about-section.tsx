@@ -17,11 +17,11 @@ export function AboutSection(): React.ReactElement {
       >
         <SectionLabel>About</SectionLabel>
 
-        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
+        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
           We're open contributors dotted across the globe
         </h2>
 
-        <p className="!leading-relaxed tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+        <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
           Our mission to create better code editor theme that allow to enhance
           the developer experiences and productivity.
         </p>

@@ -26,7 +26,7 @@ export function HeroSection(): React.ReactElement {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
           viewport={{ once: true, margin: '-20% 0px' }}
-          className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12"
+          className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12"
         >
           The code editor themes for simplicity & productivity
         </motion.h2>
@@ -36,7 +36,7 @@ export function HeroSection(): React.ReactElement {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
           viewport={{ once: true, margin: '-20% 0px' }}
-          className="!leading-relaxed tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty"
+          className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty"
         >
           Powering your coding productivity with simple design and elegant view
           for all of your code editor, Never miss the important things from

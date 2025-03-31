@@ -3,10 +3,13 @@
 import { SectionLabel, MarqueeAnimation } from '@shared/components'
 import * as React from 'react'
 import { GalleryItem } from './gallery-item'
-import jsonData from './data.json'
+
 import { motion } from 'motion/react'
 
-const galleries: string[] = jsonData.galleries as string[]
+const galleries: string[] = [
+  'https://cdn.hashnode.com/res/hashnode/image/upload/v1732803074247/caca6311-7556-4993-a429-e8952b2ccd40.png',
+  'https://cdn.hashnode.com/res/hashnode/image/upload/v1732803081142/ec166e55-82a4-477c-9736-eb70f7756370.png',
+]
 
 export function GallerySection(): React.ReactElement {
   return (
@@ -21,11 +24,11 @@ export function GallerySection(): React.ReactElement {
         >
           <SectionLabel>How it’s live</SectionLabel>
 
-          <h2 className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
+          <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
             See your editor with new clean looks
           </h2>
 
-          <p className="!leading-relaxed tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+          <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
             Design with simplicity and clean look principle allow you to moving
             forward and focus on your own code, without distractions and high
             content readability.
@@ -45,8 +48,8 @@ export function GallerySection(): React.ReactElement {
             <GalleryItem image={image} key={index} />
           ))}
         </MarqueeAnimation>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-background "></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-background"></div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-linear-to-r from-background "></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-linear-to-l from-background"></div>
       </motion.div>
     </section>
   )

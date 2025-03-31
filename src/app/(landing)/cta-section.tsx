@@ -20,11 +20,11 @@ export function CTASection(): React.ReactElement {
       >
         <SectionLabel>Get Started</SectionLabel>
 
-        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
+        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
           Code on your editor with clean visuals
         </h2>
 
-        <p className="!leading-relaxed tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+        <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
           Start code on your own code editor with our code theme, try the clean
           looks and also the simplicity.
         </p>

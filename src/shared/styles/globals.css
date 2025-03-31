@@ -1,36 +1,115 @@
-@import '@flaticon/flaticon-uicons/css/all/all.css';
+@import '@flaticon/flaticon-uicons/css/all/all.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer base {
-  :root {
-    --color-background: 0 0 98%;
-    --color-foreground: 0 0 0%;
-    --color-surface: 0 0 100%;
-    --color-border: 0 0 94%;
-    --color-input: 0 0 97%;
-    --color-primary: 0 0 0%;
-    --color-primary-foreground: 0 0 96%;
-    --color-secondary: 0 0 96%;
-    --color-secondary-foreground: 0 0 0%;
-    --color-destructive: 0 100% 50%;
-    --color-destructive-foreground: 210 40% 98%;
+@plugin '@tailwindcss/forms';
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-*: initial;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 640px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
+
+  --animate-*: initial;
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-meteor-effect: meteor 5s linear infinite;
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  --text-base: 0.9375rem;
+
+  --color-background: hsl(0 0 98%);
+  --color-foreground: hsl(0 0 0%);
+  --color-surface: hsl(0 0 100%);
+  --color-border: hsl(0 0 94%);
+  --color-input: hsl(0 0 97%);
+  --color-primary: hsl(0 0 0%);
+  --color-primary-foreground: hsl(0 0 96%);
+  --color-secondary: hsl(0 0 96%);
+  --color-secondary-foreground: hsl(0 0 0%);
+  --color-destructive: hsl(0 100% 50%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
   }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
 
-  .dark {
-    --color-background: 0 0 5%;
-    --color-foreground: 0 0 90%;
-    --color-surface: 0 0 8%;
-    --color-border: 0 0 15%;
-    --color-input: 0 0 9%;
-    --color-primary: 0 0 98%;
-    --color-primary-foreground: 0 0 0%;
-    --color-secondary: 0 0 10%;
-    --color-secondary-foreground: 0 0 98%;
-    --color-destructive: 0 63% 31%;
-    --color-destructive-foreground: 210 40% 98%;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
@@ -40,7 +119,7 @@
   }
 
   body {
-    @apply min-h-screen !text-sm tablet:!text-base font-normal text-foreground bg-background leading-normal !font-sans subpixel-antialiased selection:bg-slate-100 dark:selection:bg-slate-100/10;
+    @apply min-h-screen text-sm! tablet:text-base! font-normal text-foreground bg-background leading-normal font-sans! subpixel-antialiased selection:bg-slate-100 dark:selection:bg-slate-100/10;
     font-variation-settings: normal;
     font-feature-settings:
       'rlig' 1,

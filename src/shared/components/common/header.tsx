@@ -17,7 +17,7 @@ function Brand(): React.ReactElement {
       className="flex items-center gap-3 h-12 rounded-2xl border border-border bg-surface pl-2 pr-4 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
     >
       <DynamicLogo size={30} />
-      <span className="font-medium text-sm">Brook Code Theme</span>
+      <span className="font-medium text-sm font-mono">One Thing Theme</span>
     </Link>
   )
 }
@@ -40,7 +40,7 @@ function ProductsNavigationItem({
             Zed
           </NavigationItem>
           <NavigationItem
-            href="https://marketplace.visualstudio.com/items?itemName=weecraft.brook-code-theme"
+            href="https://marketplace.visualstudio.com/items?itemName=weecraft.one-thing-theme"
             target="_blank"
           >
             Visual Studio Code
@@ -75,13 +75,13 @@ function Actions(): React.ReactElement {
     <div className="hidden tablet:flex items-center h-12 bg-surface border border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1">
       <ul className="flex items-center gap-7">
         <NavigationItem
-          href="https://github.com/orgs/brook-code-theme/discussions"
+          href="https://github.com/orgs/one-thing-theme/discussions"
           target="_blank"
         >
           Contribute
         </NavigationItem>
         <NavigationItem
-          href="https://github.com/brook-code-theme"
+          href="https://github.com/one-thing-theme"
           target="_blank"
         >
           Github

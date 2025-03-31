@@ -3,8 +3,7 @@
 import * as React from 'react'
 import '@shared/styles/globals.css'
 import { Button } from '@shared/components'
-import { ThemeProvider } from '@shared/providers'
-import { fonts } from '@shared/fonts'
+import { fonts } from '@shared/libs'
 
 export default function GlobalError({
   reset,
@@ -15,30 +14,23 @@ export default function GlobalError({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fonts.geistSans.variable} ${fonts.geistMono.variable}`}
+        className={`${fonts.inter.variable} ${fonts.jetBrainsMono.variable}`}
       >
-        <ThemeProvider
-          attribute={'class'}
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="flex flex-col">
-            <section className="flex flex-col container mx-auto px-5 tablet:px-0">
-              <div className="flex flex-col items-center text-center w-7/12">
-                <h1 className="!leading-tight text-3xl tablet:text-4xl text-center font-medium">
-                  Something wrong!
-                </h1>
+        <main className="flex flex-col">
+          <section className="flex flex-col container mx-auto px-5 tablet:px-0">
+            <div className="flex flex-col items-center text-center w-7/12">
+              <h1 className="leading-tight! text-3xl tablet:text-4xl text-center font-medium">
+                Something wrong!
+              </h1>
 
-                <div className="mt-16 flex justify-center">
-                  <Button variant={'text'} size={'lg'} onClick={() => reset()}>
-                    Try again
-                  </Button>
-                </div>
+              <div className="mt-16 flex justify-center">
+                <Button variant={'text'} size={'lg'} onClick={() => reset()}>
+                  Try again
+                </Button>
               </div>
-            </section>
-          </main>
-        </ThemeProvider>
+            </div>
+          </section>
+        </main>
       </body>
     </html>
   )

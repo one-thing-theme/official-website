@@ -17,11 +17,11 @@ export function PricingSection(): React.ReactElement {
       >
         <SectionLabel>Pricing is shit</SectionLabel>
 
-        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium !leading-tight text-balance text-center mt-8 tablet:w-7/12">
+        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
           It’s free, no need payment and shits
         </h2>
 
-        <p className="!leading-relaxed tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+        <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
           We’re open source project that try to make the code editor experience
           better, try to build theme that works on every platforms to deliver
           great experiences and productivity.

@@ -33,7 +33,7 @@ type BreadScrumb = {
   link: string
 }
 
-const DOCS_PATH = '/src/features/docs/content'
+const DOCS_PATH = '/src/app/docs/content'
 
 function parseSlug(slug: string[] | undefined): string {
   return slug?.[0] || '/introduction'

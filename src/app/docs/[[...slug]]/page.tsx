@@ -1,7 +1,8 @@
-import { DocsContent, getAllDocsPaths, getDocMetadata } from '@features/docs'
 import { sharedMetadata } from '@shared/libs'
 import { Metadata, ResolvingMetadata } from 'next'
 import * as React from 'react'
+import { getAllDocsPaths, getDocMetadata } from '../docs-service'
+import { DocsContent } from '../docs-content'
 
 type Params = {
   slug: string[] | undefined

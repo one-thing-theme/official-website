@@ -1,5 +1,7 @@
-import { CenterContent, LeftContent, RightContent } from '@features/docs'
 import * as React from 'react'
+import { LeftContent } from '../left-content'
+import { CenterContent } from '../center-content'
+import { RightContent } from '../right-content'
 
 type Params = {
   slug: string[] | undefined

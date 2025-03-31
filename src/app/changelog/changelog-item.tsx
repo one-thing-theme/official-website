@@ -45,7 +45,7 @@ export function ChangelogItem({
         <Image src={image} alt={title} fill className="object-cover" />
       </picture>
 
-      <p className="text-sm text-foreground/80 !leading-relaxed">
+      <p className="text-sm text-foreground/80 leading-relaxed!">
         {description}
       </p>
     </MotionLink>
