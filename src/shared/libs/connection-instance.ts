@@ -1,4 +1,4 @@
-type FetchRequestInit = Omit<RequestInit, 'body'> & {
+type FetchRequestInit = Omit<RequestInit, "body"> & {
   body?: Record<string, any>
 }
 
@@ -7,7 +7,7 @@ async function fetchConnection<T = any>(
   options: FetchRequestInit = {},
 ): Promise<T> {
   const defaultHeaders = {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   }
 
   const decodeBody = JSON.stringify(options.body)

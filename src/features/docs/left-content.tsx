@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Navigation } from './navigation'
+import * as React from "react"
+import { Navigation } from "./navigation"
 
 export function LeftContent(): React.ReactElement {
   return (

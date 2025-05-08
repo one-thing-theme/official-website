@@ -1,6 +1,6 @@
-import { ArticleContent } from '@shared/components'
-import * as React from 'react'
-import { getDocDetail } from './docs-service'
+import { ArticleContent } from "@shared/components"
+import * as React from "react"
+import { getDocDetail } from "./docs-service"
 
 type DocsContentProps = {
   slug: string[] | undefined

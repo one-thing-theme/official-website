@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import { SectionLabel, MarqueeAnimation } from '@shared/components'
-import * as React from 'react'
-import { GalleryItem } from './gallery-item'
+import { SectionLabel, MarqueeAnimation } from "@shared/components"
+import * as React from "react"
+import { GalleryItem } from "./gallery-item"
 
-import { motion } from 'motion/react'
+import { motion } from "motion/react"
 
 const galleries: string[] = [
-  'https://cdn.hashnode.com/res/hashnode/image/upload/v1732803074247/caca6311-7556-4993-a429-e8952b2ccd40.png',
-  'https://cdn.hashnode.com/res/hashnode/image/upload/v1732803081142/ec166e55-82a4-477c-9736-eb70f7756370.png',
+  "https://cdn.hashnode.com/res/hashnode/image/upload/v1732803074247/caca6311-7556-4993-a429-e8952b2ccd40.png",
+  "https://cdn.hashnode.com/res/hashnode/image/upload/v1732803081142/ec166e55-82a4-477c-9736-eb70f7756370.png",
 ]
 
 export function GallerySection(): React.ReactElement {
@@ -18,8 +18,8 @@ export function GallerySection(): React.ReactElement {
         <motion.div
           initial={{ opacity: 0, y: 200, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
-          viewport={{ once: true, margin: '-20% 0px' }}
+          transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
+          viewport={{ once: true, margin: "-20% 0px" }}
           className="flex flex-col items-center mx-auto w-full"
         >
           <SectionLabel>How it’s live</SectionLabel>
@@ -39,8 +39,8 @@ export function GallerySection(): React.ReactElement {
       <motion.div
         initial={{ opacity: 0, y: 200, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
-        viewport={{ once: true, margin: '-20% 0px' }}
+        transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
+        viewport={{ once: true, margin: "-20% 0px" }}
         className="flex flex-col justify-center items-center w-full relative overflow-hidden h-[200px] tablet:h-[400px] mt-20 tablet:mt-36"
       >
         <MarqueeAnimation className="h-full gap-10" pauseOnHover>

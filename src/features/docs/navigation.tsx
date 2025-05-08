@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import { mergeClass } from '@shared/utils'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import * as React from 'react'
+import { mergeClass } from "@shared/utils"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import * as React from "react"
 
 type navigationItem = {
   label: string
@@ -25,25 +25,25 @@ type NavigationItemProps = {
 
 const navigations: Navigation[] = [
   {
-    group: 'Getting Started',
+    group: "Getting Started",
     list: [
-      { label: 'Introduction', link: '/docs' },
+      { label: "Introduction", link: "/docs" },
       {
-        label: 'Installation',
-        link: '/docs/installation',
+        label: "Installation",
+        link: "/docs/installation",
       },
       {
-        label: 'Configuration',
-        link: '/docs/configuration',
+        label: "Configuration",
+        link: "/docs/configuration",
       },
     ],
   },
   {
-    group: 'Guides',
+    group: "Guides",
     list: [
       {
-        label: 'Setup Clean Editor',
-        link: '/docs/setup-clean-editor',
+        label: "Setup Clean Editor",
+        link: "/docs/setup-clean-editor",
       },
     ],
   },
@@ -57,8 +57,8 @@ function NavigationItem({ item }: NavigationItemProps): React.ReactElement {
   return (
     <li
       className={mergeClass(
-        'px-3 h-9 flex items-center text-pretty group transition-all duration-300 hover:bg-secondary w-full overflow-hidden rounded-lg text-foreground/90 hover:text-foreground hover:-translate-x-1',
-        isActive && 'bg-secondary text-foreground',
+        "px-3 h-9 flex items-center text-pretty group transition-all duration-300 hover:bg-secondary w-full overflow-hidden rounded-lg text-foreground/90 hover:text-foreground hover:-translate-x-1",
+        isActive && "bg-secondary text-foreground",
       )}
     >
       <Link href={link} className="flex h-full w-full items-center">

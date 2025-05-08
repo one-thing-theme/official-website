@@ -1,6 +1,6 @@
-import { SectionLabel } from '@shared/components'
-import * as React from 'react'
-import { ChangelogList } from './changelog-list'
+import { SectionLabel } from "@shared/components"
+import * as React from "react"
+import { ChangelogList } from "./changelog-list"
 
 export function ChangelogSection(): React.ReactElement {
   return (

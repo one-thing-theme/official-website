@@ -1,12 +1,12 @@
-'use server'
+"use server"
 
-import * as fs from 'fs/promises'
-import { evaluate } from 'next-mdx-remote-client/rsc'
-import { getFrontmatter } from 'next-mdx-remote-client/utils'
-import remarkFlexibleToc, { TocItem } from 'remark-flexible-toc'
-import rehypeSlug from 'rehype-slug'
-import path from 'path'
-import * as React from 'react'
+import * as fs from "fs/promises"
+import { evaluate } from "next-mdx-remote-client/rsc"
+import { getFrontmatter } from "next-mdx-remote-client/utils"
+import remarkFlexibleToc, { TocItem } from "remark-flexible-toc"
+import rehypeSlug from "rehype-slug"
+import path from "path"
+import * as React from "react"
 
 type Metadata = {
   title: string
@@ -33,18 +33,18 @@ type BreadScrumb = {
   link: string
 }
 
-const DOCS_PATH = '/src/app/docs/content'
+const DOCS_PATH = "/src/features/contents"
 
 function parseSlug(slug: string[] | undefined): string {
-  return slug?.[0] || '/introduction'
+  return slug?.[0] || "/introduction"
 }
 
 export async function getAllDocsPaths(): Promise<string[]> {
   const folderPath = path.join(process.cwd(), DOCS_PATH)
   const files = await fs.readdir(folderPath)
   const paths = files
-    .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
-    .map((file) => file.replace(/\.mdx?$/, ''))
+    .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"))
+    .map((file) => file.replace(/\.mdx?$/, ""))
 
   return paths || []
 }
@@ -54,7 +54,7 @@ export async function getDocMetadata(
 ): Promise<Metadata> {
   const parsedSlug = parseSlug(slug)
   const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, 'utf8')
+  const rawContent = await fs.readFile(filePath, "utf8")
   const { frontmatter } = getFrontmatter<DocFrontMatter>(rawContent)
 
   return {
@@ -68,7 +68,7 @@ export async function getBreadcrumb(
 ): Promise<BreadScrumb> {
   const parsedSlug = parseSlug(slug)
   const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, 'utf8')
+  const rawContent = await fs.readFile(filePath, "utf8")
   const { frontmatter } = getFrontmatter<DocFrontMatter>(rawContent)
 
   return {
@@ -80,7 +80,7 @@ export async function getBreadcrumb(
 export async function getToc(slug: string[] | undefined): Promise<TocItem[]> {
   const parsedSlug = parseSlug(slug)
   const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, 'utf8')
+  const rawContent = await fs.readFile(filePath, "utf8")
   const { scope } = await evaluate<DocFrontMatter, DocsScope>({
     source: rawContent,
     options: {
@@ -88,7 +88,7 @@ export async function getToc(slug: string[] | undefined): Promise<TocItem[]> {
         remarkPlugins: [remarkFlexibleToc],
       },
       parseFrontmatter: true,
-      vfileDataIntoScope: 'toc',
+      vfileDataIntoScope: "toc",
     },
   })
 
@@ -101,7 +101,7 @@ export async function getDocDetail(
 ): Promise<DocDetail> {
   const parsedSlug = parseSlug(slug)
   const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, 'utf8')
+  const rawContent = await fs.readFile(filePath, "utf8")
   const { frontmatter, content } = await evaluate<DocFrontMatter, any>({
     source: rawContent,
     options: {

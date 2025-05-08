@@ -1,8 +1,7 @@
-'use client'
+"use client"
 
-import { mergeClass } from '@shared/utils/helpers'
-import * as React from 'react'
-import { motion } from 'motion/react'
+import * as React from "react"
+import { motion } from "motion/react"
 
 interface SectionLabelProps {
   className?: string
@@ -11,20 +10,17 @@ interface SectionLabelProps {
 
 export function SectionLabel({
   children,
-  className,
 }: SectionLabelProps): React.ReactElement {
   return (
-    <motion.span
+    <motion.div
       initial={{ opacity: 0, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
-      viewport={{ once: true, margin: '-30% 0px' }}
-      className={mergeClass(
-        'flex items-center h-8 px-4 text-xs text-center text-foreground/60 bg-surface border border-border rounded-xl cursor-pointer hover:scale-95 hover:text-foreground',
-        className,
-      )}
+      transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
+      viewport={{ once: true }}
     >
-      {children}
-    </motion.span>
+      <span className="flex items-center gap-2 h-8 px-4 text-sm text-center text-foreground/60 bg-surface border-2 border-dashed border-border rounded-full cursor-pointer transition-all duration-300 hover:scale-95 hover:text-foreground">
+        {children}
+      </span>
+    </motion.div>
   )
 }

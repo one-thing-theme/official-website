@@ -1,34 +1,34 @@
-'use client'
+"use client"
 
-import { MarqueeAnimation, SectionLabel } from '@shared/components'
-import * as React from 'react'
-import { TestimonialItem } from './testimonial-item'
-import { motion } from 'motion/react'
+import { MarqueeAnimation, SectionLabel } from "@shared/components"
+import * as React from "react"
+import { TestimonialItem } from "./testimonial-item"
+import { motion } from "motion/react"
 
 const testimonials = [
   {
-    name: 'Brooklyn Simmons',
-    username: 'brsimons',
+    name: "Brooklyn Simmons",
+    username: "brsimons",
     testimonial:
-      'The color palette is vibrant but not overwhelming, making it perfect for long hours of work.',
+      "The color palette is vibrant but not overwhelming, making it perfect for long hours of work.",
   },
   {
-    name: 'Darrell Steward',
-    username: 'darrellsstew',
+    name: "Darrell Steward",
+    username: "darrellsstew",
     testimonial:
-      'It strikes the perfect balance between aesthetics and readability. My code has never looked so organized and appealing!',
+      "It strikes the perfect balance between aesthetics and readability. My code has never looked so organized and appealing!",
   },
   {
-    name: 'Devon Lane',
-    username: 'devonlanes99',
+    name: "Devon Lane",
+    username: "devonlanes99",
     testimonial:
-      'I’ve tried dozens of themes, but nothing compares to the seamless blend of style and functionality offered by these themes. Ghost and Brook are now my go-to for VSCode and JetBrains.',
+      "I’ve tried dozens of themes, but nothing compares to the seamless blend of style and functionality offered by these themes. Ghost and Brook are now my go-to for VSCode and JetBrains.",
   },
   {
-    name: 'Robert Fox',
-    username: 'robertfox33',
+    name: "Robert Fox",
+    username: "robertfox33",
     testimonial:
-      'The subtle contrasts and thoughtful design in Brook Code Theme are exceptional. Debugging has become a lot easier because I can identify issues quickly thanks to the clear color differentiation.',
+      "The subtle contrasts and thoughtful design in Brook Code Theme are exceptional. Debugging has become a lot easier because I can identify issues quickly thanks to the clear color differentiation.",
   },
 ]
 
@@ -39,8 +39,8 @@ export function TestimonialSection(): React.ReactElement {
         <motion.div
           initial={{ opacity: 0, y: 200, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
-          viewport={{ once: true, margin: '-20% 0px' }}
+          transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
+          viewport={{ once: true, margin: "-20% 0px" }}
           className="flex flex-col items-center mx-auto w-full"
         >
           <SectionLabel>Wall of love</SectionLabel>
@@ -59,8 +59,8 @@ export function TestimonialSection(): React.ReactElement {
       <motion.div
         initial={{ opacity: 0, y: 200, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
-        viewport={{ once: true, margin: '-20% 0px' }}
+        transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
+        viewport={{ once: true, margin: "-20% 0px" }}
         className="flex flex-col justify-center items-center w-full relative overflow-hidden h-[360px] mt-36"
       >
         <MarqueeAnimation className="gap-5" pauseOnHover>

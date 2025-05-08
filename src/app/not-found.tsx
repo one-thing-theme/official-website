@@ -1,11 +1,11 @@
-import { Button } from '@shared/components'
-import { Metadata } from 'next'
-import Link from 'next/link'
-import * as React from 'react'
+import { Button } from "@shared/components"
+import { Metadata } from "next"
+import Link from "next/link"
+import * as React from "react"
 
 export const metadata: Metadata = {
-  title: 'Not Found',
-  description: ' Opps, good luck. You’re missing the pages',
+  title: "Not Found",
+  description: " Opps, good luck. You’re missing the pages",
 }
 
 export default function NotFoundPage(): React.ReactElement {
@@ -27,11 +27,11 @@ export default function NotFoundPage(): React.ReactElement {
           <div className="mt-16">
             <Button
               asChild
-              variant={'text'}
-              size={'lg'}
+              variant={"text"}
+              size={"lg"}
               className="transition-all hover:scale-95"
             >
-              <Link href={'/'}>
+              <Link href={"/"}>
                 Bring me back <i className="fi fi-rr-arrow-right" />
               </Link>
             </Button>

@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import { motion } from 'framer-motion'
+import * as React from "react"
+import { motion } from "framer-motion"
 
 interface PageTransitionProps {
   children: React.ReactNode
@@ -15,11 +15,11 @@ export function PageTransition({
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
-        type: 'spring',
+        type: "spring",
         damping: 8,
         stiffness: 60,
-        ease: 'easeInOut',
-        duration: '.7',
+        ease: "easeInOut",
+        duration: ".7",
       }}
     >
       {children}

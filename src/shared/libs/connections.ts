@@ -1,4 +1,4 @@
-import { createConnectionInstance } from './connection-instance'
+import { createConnectionInstance } from "./connection-instance"
 
 const GET_WAITLIST_BASE_URL = `https://api.getwaitlist.com`
 

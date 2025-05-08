@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import { SectionLabel, Button } from '@shared/components'
-import Link from 'next/link'
-import * as React from 'react'
-import { motion } from 'motion/react'
+import { SectionLabel, Button } from "@shared/components"
+import Link from "next/link"
+import * as React from "react"
+import { motion } from "motion/react"
 
 export function CTASection(): React.ReactElement {
   return (
@@ -14,8 +14,8 @@ export function CTASection(): React.ReactElement {
       <motion.div
         initial={{ opacity: 0, y: 200, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
-        viewport={{ once: true, margin: '-20% 0px' }}
+        transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
+        viewport={{ once: true, margin: "-20% 0px" }}
         className="flex flex-col items-center mx-auto w-full"
       >
         <SectionLabel>Get Started</SectionLabel>
@@ -30,16 +30,13 @@ export function CTASection(): React.ReactElement {
         </p>
 
         <div className="flex flex-wrap justify-center items-center mt-16 tablet:w-5/12 gap-x-4 tablet:gap-y-3">
-          <Button variant={'text'} className="text-foreground/50">
-            Jetbrains (coming soon)
-          </Button>
           <Button
-            variant={'text'}
+            variant={"text"}
             className="transition-all duration-300 hover:-translate-y-1"
           >
             <Link
               href={
-                'https://marketplace.visualstudio.com/items?itemName=weecraft.brook-code-theme'
+                "https://marketplace.visualstudio.com/items?itemName=weecraft.brook-code-theme"
               }
               target="_blank"
             >
@@ -47,18 +44,29 @@ export function CTASection(): React.ReactElement {
             </Link>
           </Button>
           <Button
-            variant={'text'}
+            variant={"text"}
             className="transition-all duration-300 hover:-translate-y-1"
           >
             <Link
-              href={'https://zed.dev/extensions?query=brook+code+theme'}
+              href={"https://zed.dev/extensions?query=brook+code+theme"}
               target="_blank"
             >
               Zed
             </Link>
           </Button>
-          <Button variant={'text'} className="text-foreground/50">
-            Syntax highlight (coming soon)
+          <Button
+            variant={"text"}
+            className="transition-all duration-300 hover:-translate-y-1"
+          >
+            <Link
+              href={"https://github.com/one-thing-theme/oh-my-posh"}
+              target="_blank"
+            >
+              Oh my posh
+            </Link>
+          </Button>
+          <Button variant={"text"} className="text-foreground/50">
+            Other (coming soon)
           </Button>
         </div>
       </motion.div>

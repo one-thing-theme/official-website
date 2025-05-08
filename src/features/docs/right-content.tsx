@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { TableOfContent } from './table-of-content'
+import * as React from "react"
+import { TableOfContent } from "./table-of-content"
 
 type RightContentProps = {
   slug: string[] | undefined

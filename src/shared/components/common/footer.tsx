@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { NavigationItem } from './navigation-link'
+import * as React from "react"
+import { NavigationItem } from "./navigation-link"
 
 export function Footer(): React.ReactElement {
   return (

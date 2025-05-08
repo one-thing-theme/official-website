@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import * as React from 'react'
-import { getToc } from './docs-service'
-import { mergeClass } from '@shared/utils'
+import Link from "next/link"
+import * as React from "react"
+import { getToc } from "./docs-service"
+import { mergeClass } from "@shared/utils"
 
 type TableOfContentProps = {
   slug: string[] | undefined
@@ -22,8 +22,8 @@ export async function TableOfContent({
             <li
               key={index}
               className={mergeClass(
-                'text-foreground/60 hover:text-foreground group flex h-8 px-3',
-                item.depth === 3 && 'ml-4',
+                "text-foreground/60 hover:text-foreground group flex h-8 px-3",
+                item.depth === 3 && "ml-4",
               )}
             >
               <Link

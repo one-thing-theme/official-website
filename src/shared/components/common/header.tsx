@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import { DynamicLogo } from './dynamic-logo'
-import { NavigationItem } from './navigation-link'
-import Link from 'next/link'
-import { useMotionValueEvent, useScroll, motion } from 'motion/react'
+import * as React from "react"
+import { DynamicLogo } from "./dynamic-logo"
+import { NavigationItem } from "./navigation-link"
+import Link from "next/link"
+import { useMotionValueEvent, useScroll, motion } from "motion/react"
 
 interface ProductsNavigationItemProps {
   children: React.ReactNode
@@ -13,11 +13,11 @@ interface ProductsNavigationItemProps {
 function Brand(): React.ReactElement {
   return (
     <Link
-      href={'/'}
-      className="flex items-center gap-3 h-12 rounded-2xl border border-border bg-surface pl-2 pr-4 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+      href={"/"}
+      className="flex items-center gap-3 h-12 rounded-2xl border-2 border-dashed border-border bg-surface pl-2 pr-4 transition-all duration-300 hover:-translate-y-1 hover:border-link cursor-pointer"
     >
       <DynamicLogo size={30} />
-      <span className="font-medium text-sm font-mono">One Thing Theme</span>
+      <span className="font-medium text-sm">One Thing Theme</span>
     </Link>
   )
 }
@@ -27,7 +27,7 @@ function ProductsNavigationItem({
 }: ProductsNavigationItemProps): React.ReactElement {
   return (
     <li
-      className={`text-sm font-medium text-foreground/80 transition-all duration-300 hover:font-medium hover:text-foreground cursor-pointer relative group`}
+      className={`flex items-center gap-2 text-sm text-foreground/60 transition-all duration-300 hover:text-foreground cursor-pointer relative group`}
     >
       {children}
 
@@ -53,16 +53,18 @@ function ProductsNavigationItem({
 
 function Navigation(): React.ReactElement {
   return (
-    <nav className="hidden laptop:flex items-center h-12 bg-surface border border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1">
+    <nav className="hidden laptop:flex items-center h-12 bg-surface border-2 border-dashed border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1 hover:border-link">
       <ul className="flex items-center gap-7">
-        <ProductsNavigationItem>Products</ProductsNavigationItem>
+        <ProductsNavigationItem>
+          Products <i className="fi fi-rr-angle-small-down" />
+        </ProductsNavigationItem>
         <NavigationItem href="/changelog">What's new</NavigationItem>
         <NavigationItem href="/docs">Docs</NavigationItem>
         <NavigationItem
           href="https://github.com/sponsors/nyomansunima"
           target="_blank"
         >
-          Support
+          Sponsor
         </NavigationItem>
         <NavigationItem href="/#get-started">Download</NavigationItem>
       </ul>
@@ -72,7 +74,7 @@ function Navigation(): React.ReactElement {
 
 function Actions(): React.ReactElement {
   return (
-    <div className="hidden tablet:flex items-center h-12 bg-surface border border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1">
+    <div className="hidden tablet:flex items-center h-12 bg-surface border-2 border-dashed border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1 hover:border-link">
       <ul className="flex items-center gap-7">
         <NavigationItem
           href="https://github.com/orgs/one-thing-theme/discussions"
@@ -93,19 +95,19 @@ function Actions(): React.ReactElement {
 
 export function Header(): React.ReactElement {
   const { scrollY } = useScroll()
-  const [scrollDirection, setScrollDirection] = React.useState<'up' | 'down'>(
-    'up',
+  const [scrollDirection, setScrollDirection] = React.useState<"up" | "down">(
+    "up",
   )
 
-  useMotionValueEvent(scrollY, 'change', (progress) => {
+  useMotionValueEvent(scrollY, "change", (progress) => {
     const diff = progress - (scrollY.getPrevious() || 0)
-    setScrollDirection(diff > 0 ? 'down' : 'up')
+    setScrollDirection(diff > 0 ? "down" : "up")
   })
 
   return (
     <motion.header
-      transition={{ type: 'spring', duration: 1.2 }}
-      animate={{ y: scrollDirection === 'down' ? -200 : 0 }}
+      transition={{ type: "spring", duration: 1.2 }}
+      animate={{ y: scrollDirection === "down" ? -200 : 0 }}
       className="flex fixed top-4 tablet:top-6 inset-x-3 tablet:inset-x-10 z-50 justify-between"
     >
       <Brand />

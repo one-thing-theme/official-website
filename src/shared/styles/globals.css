@@ -1,6 +1,6 @@
-@import '@flaticon/flaticon-uicons/css/all/all.css' layer(base);
+@import "@flaticon/flaticon-uicons/css/all/all.css" layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/forms';
 @plugin 'tailwindcss-animate';
@@ -9,7 +9,9 @@
 @theme {
   --font-*: initial;
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --leading-tight: 1.1;
 
   --breakpoint-*: initial;
   --breakpoint-tablet: 640px;
@@ -26,7 +28,7 @@
 
   --text-base: 0.9375rem;
 
-  --color-background: hsl(0 0 98%);
+  --color-background: hsl(0 0 100%);
   --color-foreground: hsl(0 0 0%);
   --color-surface: hsl(0 0 100%);
   --color-border: hsl(0 0 94%);
@@ -37,6 +39,8 @@
   --color-secondary-foreground: hsl(0 0 0%);
   --color-destructive: hsl(0 100% 50%);
   --color-destructive-foreground: hsl(210 40% 98%);
+  --color-link: oklch(54.6% 0.245 262.881);
+  --color-accent: oklch(83.3% 0.145 321.434);
 
   @keyframes accordion-down {
     from {
@@ -46,6 +50,7 @@
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
@@ -122,8 +127,8 @@
     @apply min-h-screen text-sm! tablet:text-base! font-normal text-foreground bg-background leading-normal font-sans! subpixel-antialiased selection:bg-slate-100 dark:selection:bg-slate-100/10;
     font-variation-settings: normal;
     font-feature-settings:
-      'rlig' 1,
-      'calt' 1;
+      "rlig" 1,
+      "calt" 1;
   }
 
   .fi {

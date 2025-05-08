@@ -1,5 +1,5 @@
-import { mergeClass } from '@shared/utils/helpers'
-import * as React from 'react'
+import { mergeClass } from "@shared/utils/helpers"
+import * as React from "react"
 
 interface MarqueeProps {
   className?: string
@@ -24,10 +24,10 @@ export function MarqueeAnimation({
     <div
       {...props}
       className={mergeClass(
-        'group flex h-full overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]',
+        "group flex h-full overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
         {
-          'flex-row': !vertical,
-          'flex-col': vertical,
+          "flex-row": !vertical,
+          "flex-col": vertical,
         },
         className,
       )}
@@ -38,12 +38,12 @@ export function MarqueeAnimation({
           <div
             key={i}
             className={mergeClass(
-              'flex shrink-0 justify-around [gap:var(--gap)]',
+              "flex shrink-0 justify-around [gap:var(--gap)]",
               {
-                'animate-marquee flex-row': !vertical,
-                'animate-marquee-vertical flex-col': vertical,
-                'group-hover:[animation-play-state:paused]': pauseOnHover,
-                '[animation-direction:reverse]': reverse,
+                "animate-marquee flex-row": !vertical,
+                "animate-marquee-vertical flex-col": vertical,
+                "group-hover:[animation-play-state:paused]": pauseOnHover,
+                "[animation-direction:reverse]": reverse,
               },
             )}
           >

@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Breadcrumb } from './breadcrumb'
+import * as React from "react"
+import { Breadcrumb } from "./breadcrumb"
 
 type CenterContentProps = {
   children: React.ReactNode

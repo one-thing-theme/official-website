@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import '@shared/styles/globals.css'
-import { Button } from '@shared/components'
-import { fonts } from '@shared/libs'
+import * as React from "react"
+import "@shared/styles/globals.css"
+import { Button } from "@shared/components"
+import { fonts } from "@shared/libs"
 
 export default function GlobalError({
   reset,
@@ -24,7 +24,7 @@ export default function GlobalError({
               </h1>
 
               <div className="mt-16 flex justify-center">
-                <Button variant={'text'} size={'lg'} onClick={() => reset()}>
+                <Button variant={"text"} size={"lg"} onClick={() => reset()}>
                   Try again
                 </Button>
               </div>

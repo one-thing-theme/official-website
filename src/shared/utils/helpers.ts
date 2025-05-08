@@ -1,6 +1,6 @@
-import { type ClassValue, clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
-import dayjs from 'dayjs'
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+import dayjs from "dayjs"
 
 export function mergeClass(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -23,7 +23,7 @@ interface SplitName {
 export function splitName(input: string): SplitName {
   const nameParts = input.trim().split(/\s+/)
   if (nameParts.length < 2) {
-    return { firstName: input, lastName: '' }
+    return { firstName: input, lastName: "" }
   }
 
   const firstName = nameParts[0]
