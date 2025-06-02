@@ -19,7 +19,7 @@
     "@radix-ui/react-tooltip": "^1.2.6",
     "dayjs": "^1.11.13",
     "motion": "^12.10.2",
-    "next": "15.3.2",
+    "next": "15.3.3",
     "next-mdx-remote-client": "^2.1.2",
     "posthog-js": "^1.240.4",
     "react": "19.1.0",
