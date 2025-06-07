@@ -1,9 +1,5 @@
-"use client"
-
-import { mergeClass } from "@shared/utils"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import * as React from "react"
+import { mergeClass } from "@shared/libs"
+import { Link, useLocation } from "react-router"
 
 type navigationItem = {
   label: string
@@ -49,10 +45,10 @@ const navigations: Navigation[] = [
   },
 ]
 
-function NavigationItem({ item }: NavigationItemProps): React.ReactElement {
+function NavigationItem({ item }: NavigationItemProps) {
   const { label, link } = item
-  const pathName = usePathname()
-  const isActive = pathName === `${link}`
+  const location = useLocation()
+  const isActive = location.pathname === `${link}`
 
   return (
     <li
@@ -61,14 +57,14 @@ function NavigationItem({ item }: NavigationItemProps): React.ReactElement {
         isActive && "bg-secondary text-foreground",
       )}
     >
-      <Link href={link} className="flex h-full w-full items-center">
+      <Link to={link} className="flex h-full w-full items-center">
         {label}
       </Link>
     </li>
   )
 }
 
-function NavigationGroup({ group }: NavigationGroupProps): React.ReactElement {
+function NavigationGroup({ group }: NavigationGroupProps) {
   const { group: groupName, list } = group
 
   return (
@@ -83,7 +79,7 @@ function NavigationGroup({ group }: NavigationGroupProps): React.ReactElement {
   )
 }
 
-export function Navigation(): React.ReactElement {
+export function Navigation() {
   return (
     <div className="flex flex-col w-full gap-8">
       {navigations.map((group, index) => (

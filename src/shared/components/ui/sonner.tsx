@@ -4,10 +4,10 @@ import * as React from "react"
 
 import {
   Toast,
-  ToastActionElement,
+  type ToastActionElement,
   ToastClose,
   ToastDescription,
-  ToastProps,
+  type ToastProps,
   ToastProvider,
   ToastTitle,
   ToastViewport,

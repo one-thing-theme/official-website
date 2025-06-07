@@ -4,7 +4,7 @@ import { SectionLabel, Button } from "@shared/components"
 import * as React from "react"
 import { ImageShot } from "./image-shot"
 import { motion } from "motion/react"
-import Link from "next/link"
+import { Link } from "react-router"
 
 export function HeroSection(): React.ReactElement {
   return (
@@ -49,7 +49,7 @@ export function HeroSection(): React.ReactElement {
             className="transition-all duration-300 hover:-translate-y-1"
             asChild
           >
-            <Link href={"/#get-started"}>
+            <Link to={"/#get-started"}>
               Download Now
               <i className="fi fi-rr-arrow-right" />
             </Link>

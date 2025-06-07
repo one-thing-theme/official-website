@@ -1,17 +1,12 @@
-import Link from "next/link"
-import * as React from "react"
-import { getToc } from "./docs-service"
-import { mergeClass } from "@shared/utils"
+import { mergeClass } from "@shared/libs"
+import { Link } from "react-router"
+import type { TocItem } from "remark-flexible-toc"
 
-type TableOfContentProps = {
-  slug: string[] | undefined
+type Props = {
+  toc: TocItem[]
 }
 
-export async function TableOfContent({
-  slug,
-}: TableOfContentProps): Promise<React.ReactElement> {
-  const toc = await getToc(slug)
-
+export function TableOfContent({ toc }: Props) {
   return (
     <div className="flex flex-col w-full">
       <span className="text-sm px-3 font-medium">On this page</span>
@@ -26,10 +21,7 @@ export async function TableOfContent({
                 item.depth === 3 && "ml-4",
               )}
             >
-              <Link
-                href={item.href}
-                className="flex w-full h-full items-center"
-              >
+              <Link to={item.href} className="flex w-full h-full items-center">
                 {item.value}
               </Link>
             </li>

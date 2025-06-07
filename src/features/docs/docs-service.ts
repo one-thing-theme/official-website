@@ -1,17 +1,7 @@
-"use server"
-
 import * as fs from "fs/promises"
-import { evaluate } from "next-mdx-remote-client/rsc"
-import { getFrontmatter } from "next-mdx-remote-client/utils"
-import remarkFlexibleToc, { TocItem } from "remark-flexible-toc"
-import rehypeSlug from "rehype-slug"
+import { type TocItem } from "remark-flexible-toc"
 import path from "path"
-import * as React from "react"
-
-type Metadata = {
-  title: string
-  description: string
-}
+import { parseMarkdown } from "@shared/libs"
 
 type DocFrontMatter = {
   title: string
@@ -19,101 +9,50 @@ type DocFrontMatter = {
   publishedAt: string
 }
 
-type DocsScope = {
-  toc: TocItem[]
+export type DocDetail = {
+  data: DocFrontMatter
+  content: any
 }
 
-type DocDetail = {
-  frontmatter: DocFrontMatter
-  content: React.ReactNode
-}
-
-type BreadScrumb = {
+export type BreadScrumb = {
   title: string
   link: string
 }
 
-const DOCS_PATH = "/src/features/contents"
+const DOCS_PATH = "/src/features/docs/contents"
 
-function parseSlug(slug: string[] | undefined): string {
-  return slug?.[0] || "/introduction"
+function parseSlug(slug: string): string {
+  return slug == "" ? "introduction" : slug
 }
 
-export async function getAllDocsPaths(): Promise<string[]> {
-  const folderPath = path.join(process.cwd(), DOCS_PATH)
-  const files = await fs.readdir(folderPath)
-  const paths = files
-    .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"))
-    .map((file) => file.replace(/\.mdx?$/, ""))
+async function loadRawFile(slug: string) {
+  const filePath = path.join(process.cwd(), DOCS_PATH, `${slug}.md`)
+  const rawFile = await fs.readFile(filePath, "utf8")
 
-  return paths || []
+  return rawFile
 }
-
-export async function getDocMetadata(
-  slug: string[] | undefined,
-): Promise<Metadata> {
+export async function getBreadcrumb(slug: string): Promise<BreadScrumb[]> {
   const parsedSlug = parseSlug(slug)
-  const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, "utf8")
-  const { frontmatter } = getFrontmatter<DocFrontMatter>(rawContent)
+  const rawFile = await loadRawFile(parsedSlug)
+  const { data } = parseMarkdown(rawFile)
 
-  return {
-    title: frontmatter.title,
-    description: frontmatter.description,
-  }
-}
-
-export async function getBreadcrumb(
-  slug: string[] | undefined,
-): Promise<BreadScrumb> {
-  const parsedSlug = parseSlug(slug)
-  const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, "utf8")
-  const { frontmatter } = getFrontmatter<DocFrontMatter>(rawContent)
-
-  return {
-    title: frontmatter.title,
-    link: `/docs/${parsedSlug}`,
-  }
-}
-
-export async function getToc(slug: string[] | undefined): Promise<TocItem[]> {
-  const parsedSlug = parseSlug(slug)
-  const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, "utf8")
-  const { scope } = await evaluate<DocFrontMatter, DocsScope>({
-    source: rawContent,
-    options: {
-      mdxOptions: {
-        remarkPlugins: [remarkFlexibleToc],
-      },
-      parseFrontmatter: true,
-      vfileDataIntoScope: "toc",
+  return [
+    {
+      title: data.title,
+      link: `/docs/${parsedSlug}`,
     },
-  })
-
-  const toc = scope.toc
-  return toc
+  ]
 }
 
-export async function getDocDetail(
-  slug: string[] | undefined,
-): Promise<DocDetail> {
+export async function getToc(slug: string): Promise<TocItem[]> {
   const parsedSlug = parseSlug(slug)
-  const filePath = path.join(process.cwd(), DOCS_PATH, `${parsedSlug}.mdx`)
-  const rawContent = await fs.readFile(filePath, "utf8")
-  const { frontmatter, content } = await evaluate<DocFrontMatter, any>({
-    source: rawContent,
-    options: {
-      mdxOptions: {
-        rehypePlugins: [rehypeSlug],
-      },
-      parseFrontmatter: true,
-    },
-  })
+  const rawFile = await loadRawFile(parsedSlug)
+  return []
+}
 
-  return {
-    frontmatter,
-    content,
-  }
+export async function getDocDetail(slug: string): Promise<DocDetail> {
+  const parsedSlug = parseSlug(slug)
+  const rawFile = await loadRawFile(parsedSlug)
+  const { data, content } = parseMarkdown(rawFile)
+  return { data, content } as DocDetail
 }

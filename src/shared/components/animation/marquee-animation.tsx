@@ -1,4 +1,4 @@
-import { mergeClass } from "@shared/utils/helpers"
+import { mergeClass } from "@shared/libs"
 import * as React from "react"
 
 interface MarqueeProps {

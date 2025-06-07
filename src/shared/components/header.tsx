@@ -3,7 +3,7 @@
 import * as React from "react"
 import { DynamicLogo } from "./dynamic-logo"
 import { NavigationItem } from "./navigation-link"
-import Link from "next/link"
+import { Link } from "react-router"
 import { useMotionValueEvent, useScroll, motion } from "motion/react"
 
 interface ProductsNavigationItemProps {
@@ -13,7 +13,7 @@ interface ProductsNavigationItemProps {
 function Brand(): React.ReactElement {
   return (
     <Link
-      href={"/"}
+      to={"/"}
       className="flex items-center gap-3 h-12 rounded-2xl border-2 border-dashed border-border bg-surface pl-2 pr-4 transition-all duration-300 hover:-translate-y-1 hover:border-link cursor-pointer"
     >
       <DynamicLogo size={30} />

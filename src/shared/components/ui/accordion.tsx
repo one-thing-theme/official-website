@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { mergeClass } from "@shared/utils/helpers"
+import { mergeClass } from "@shared/libs"
 
 const Accordion = AccordionPrimitive.Root
 

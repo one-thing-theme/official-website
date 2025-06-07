@@ -1,25 +1,69 @@
-import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types"
-import { Twitter } from "next/dist/lib/metadata/types/twitter-types"
+import { loadConfig } from "./config"
 
-const openGraph: OpenGraph = {
-  images: [
-    "https://cdn.hashnode.com/res/hashnode/image/upload/v1732187828243/cc1d78a8-387f-457e-841e-20f9528588e9.png",
-  ],
-  locale: "en_US",
-  type: "website",
-  siteName: "Minimal & Simple productivity Theme | One Thing Theme",
+type GeneratedMetadataInput = {
+  title: string
+  description: string
+  image?: string
 }
 
-const twitter: Twitter = {
-  images: [
-    "https://cdn.hashnode.com/res/hashnode/image/upload/v1732187828243/cc1d78a8-387f-457e-841e-20f9528588e9.png",
-  ],
-  card: "summary_large_image",
-  creator: "@nyomansunima",
-  site: "Minimal & Simple productivity Theme | One Thing Theme",
-}
+export function generatedMetadata({
+  title,
+  description,
+  image,
+}: GeneratedMetadataInput) {
+  const config = loadConfig()
 
-export const sharedMetadata = {
-  openGraph,
-  twitter,
+  return [
+    { title },
+    {
+      name: "description",
+      content: description,
+    },
+    {
+      name: "keywords",
+      content: "Apps, Software, Product, Teams, Indie Hacker, Indie Maker",
+    },
+    { name: "creator", content: "moono" },
+    { name: "publisher", content: "moono" },
+    { name: "application-name", content: "Moono" },
+    { name: "google-site-verification", content: config.verification.google },
+    { name: "category", content: "Websites" },
+    { name: "generator", content: "React Router" },
+    { name: "pinterest-rich-pin", content: "true" },
+
+    {
+      name: "og:title",
+      content: title,
+    },
+    {
+      name: "og:description",
+      content: description,
+    },
+    {
+      name: "og:image",
+      content:
+        image ??
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1732187828243/cc1d78a8-387f-457e-841e-20f9528588e9.png",
+    },
+    { name: "og:locale", content: "en_US" },
+    { name: "og:type", content: "website" },
+
+    {
+      name: "twitter:title",
+      content: title,
+    },
+    {
+      name: "twitter:description",
+      content: description,
+    },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:site", content: "nyomansunima" },
+    { name: "twitter:creator", content: "@nyomansunima" },
+    {
+      name: "twitter:image",
+      content:
+        image ??
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1732187828243/cc1d78a8-387f-457e-841e-20f9528588e9.png",
+    },
+  ]
 }

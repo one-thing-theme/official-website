@@ -1,7 +1,7 @@
 "use client"
 
 import { SectionLabel, Button } from "@shared/components"
-import Link from "next/link"
+import { Link } from "react-router"
 import * as React from "react"
 import { motion } from "motion/react"
 
@@ -35,7 +35,7 @@ export function CTASection(): React.ReactElement {
             className="transition-all duration-300 hover:-translate-y-1"
           >
             <Link
-              href={
+              to={
                 "https://marketplace.visualstudio.com/items?itemName=weecraft.brook-code-theme"
               }
               target="_blank"
@@ -48,7 +48,7 @@ export function CTASection(): React.ReactElement {
             className="transition-all duration-300 hover:-translate-y-1"
           >
             <Link
-              href={"https://zed.dev/extensions?query=brook+code+theme"}
+              to={"https://zed.dev/extensions?query=brook+code+theme"}
               target="_blank"
             >
               Zed
@@ -59,7 +59,7 @@ export function CTASection(): React.ReactElement {
             className="transition-all duration-300 hover:-translate-y-1"
           >
             <Link
-              href={"https://github.com/one-thing-theme/oh-my-posh"}
+              to={"https://github.com/one-thing-theme/oh-my-posh"}
               target="_blank"
             >
               Oh my posh

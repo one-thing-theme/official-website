@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as TooltipPrimitive from "@radix-ui/react-tooltip"
-import { mergeClass } from "@shared/utils/helpers"
+import { mergeClass } from "@shared/libs"
 
 const TooltipProvider = TooltipPrimitive.Provider
 

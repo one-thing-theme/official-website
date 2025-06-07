@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "react-router"
 import * as React from "react"
 
 interface NavigationItemProps {
@@ -18,7 +18,7 @@ export function NavigationItem({
     <li
       className={`text-sm text-foreground/60 transition-all duration-300 hover:text-foreground ${className}`}
     >
-      <Link href={href} target={target}>
+      <Link to={href} target={target}>
         {children}
       </Link>
     </li>

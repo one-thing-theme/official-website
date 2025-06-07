@@ -1,7 +1,6 @@
 "use client"
 
-import Image from "next/image"
-import Link from "next/link"
+import { Link } from "react-router"
 import * as React from "react"
 import { motion } from "motion/react"
 
@@ -30,7 +29,7 @@ export function ChangelogItem({
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
       viewport={{ once: true, margin: "-20% 0px" }}
-      href={url}
+      to={url}
       target="_blank"
       className="flex flex-col gap-4 bg-surface border border-border rounded-2xl p-4 group"
     >
@@ -42,7 +41,7 @@ export function ChangelogItem({
       </div>
 
       <picture className="relative w-full h-[180px] tablet:h-[312px] overflow-hidden rounded-xl border border-border">
-        <Image src={image} alt={title} fill className="object-cover" />
+        <img src={image} alt={title} className="object-cover" />
       </picture>
 
       <p className="text-sm text-foreground/80 leading-relaxed!">

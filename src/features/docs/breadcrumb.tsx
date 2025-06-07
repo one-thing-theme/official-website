@@ -1,33 +1,32 @@
-import Link from "next/link"
-import * as React from "react"
-import { getBreadcrumb } from "./docs-service"
+import { type BreadScrumb } from "./docs-service"
+import { Link } from "react-router"
 
-type BreadcrumbProps = {
-  slug: string[] | undefined
+type Props = {
+  breadscrumbs: BreadScrumb[]
 }
 
-export async function Breadcrumb({
-  slug,
-}: BreadcrumbProps): Promise<React.ReactElement> {
-  const { title, link } = await getBreadcrumb(slug)
-
+export function Breadcrumb({ breadscrumbs }: Props) {
   return (
     <div className="flex items-center w-full text-sm text-foreground/60 gap-1">
       <Link
-        href={"/docs"}
+        to={"/docs"}
         className="transition-all duration-300 hover:text-foreground"
       >
         Docs
       </Link>
 
-      <i className="fi fi-rr-angle-small-right" />
+      {breadscrumbs.map(({ link, title }, i) => (
+        <div key={i} className="flex items-center gap-1">
+          <i className="fi fi-rr-angle-small-right" />
 
-      <Link
-        href={link}
-        className="transition-all duration-300 hover:text-foreground"
-      >
-        {title}
-      </Link>
+          <Link
+            to={link}
+            className="transition-all duration-300 hover:text-foreground"
+          >
+            {title}
+          </Link>
+        </div>
+      ))}
     </div>
   )
 }
