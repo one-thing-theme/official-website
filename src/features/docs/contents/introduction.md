@@ -21,7 +21,6 @@ Brook Code Theme stands out by offering:
 - **Multi-Editor Support**
 
   Compatible with popular editors, including:
-
   - VSCode
   - JetBrains IDEs
   - Zed
