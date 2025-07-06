@@ -1,5 +1,3 @@
-"use client"
-
 import { SectionLabel, Button } from "@shared/components"
 import * as React from "react"
 import { ImageShot } from "./image-shot"
@@ -11,7 +9,7 @@ export function HeroSection(): React.ReactElement {
     <section className="flex py-36 container mx-auto px-5 tablet:px-0">
       <div className="flex flex-col items-center mx-auto w-full relative z-30">
         <SectionLabel>
-          <i className="fi fi-rr-bolt" />
+          <i className="fi fi-sr-bolt" />
           New Release: Zed Theme
         </SectionLabel>
 
@@ -20,7 +18,7 @@ export function HeroSection(): React.ReactElement {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
           viewport={{ once: true, margin: "-20% 0px" }}
-          className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight text-balance text-center mt-8 tablet:w-7/12 tracking-wide"
+          className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight text-balance text-center mt-8 tablet:w-10/12 laptop:w-7/12 tracking-wide"
         >
           The code editor themes for simplicity & productivity
         </motion.h2>
@@ -30,7 +28,7 @@ export function HeroSection(): React.ReactElement {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
           viewport={{ once: true, margin: "-20% 0px" }}
-          className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-10 text-pretty"
+          className="leading-relaxed! tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-10 text-pretty"
         >
           Powering your coding productivity with simple design and elegant view
           for all of your code editor. Never miss the important things from
@@ -45,7 +43,6 @@ export function HeroSection(): React.ReactElement {
           className="flex items-center mt-16"
         >
           <Button
-            variant={"accent"}
             className="transition-all duration-300 hover:-translate-y-1"
             asChild
           >

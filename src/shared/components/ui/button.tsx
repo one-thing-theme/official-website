@@ -4,19 +4,19 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { mergeClass } from "@shared/libs"
 
 const buttonVariants = cva(
-  "flex items-center justify-center font-medium whitespace-nowrap text-sm leading-none! transition-all duration-300 gap-2 group relative",
+  "flex items-center justify-center font-medium whitespace-nowrap text-[13px] leading-none! transition-all duration-300 gap-2 group relative",
   {
     variants: {
       variant: {
         primary: "bg-primary text-primary-foreground",
-        accent: "bg-accent text-foreground",
+        accent: "bg-accent text-accent-foreground",
         outline: "border border-border bg-background text-foreground",
         text: "text-foreground",
         secondary:
           "bg-secondary text-secondary-foreground border hover:bg-secondary/60 border-border",
       },
       size: {
-        base: "h-11 px-6 rounded-xl",
+        base: "h-11 px-6 rounded-3xl",
         sm: "h-9 px-4 rounded-lg text-xs",
         lg: "h-14 px-5 rounded-xl",
         icon: "h-10 w-10 rounded-2xl",

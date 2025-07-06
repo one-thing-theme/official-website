@@ -18,7 +18,7 @@ export function SectionLabel({
       transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
       viewport={{ once: true }}
     >
-      <span className="flex items-center gap-2 h-8 px-4 text-sm text-center text-foreground/60 bg-surface border-2 border-dashed border-border rounded-full cursor-pointer transition-all duration-300 hover:scale-95 hover:text-foreground">
+      <span className="font-mono flex items-center gap-2 h-8 px-4 text-[13px] tracking-tight text-center text-foreground/60 bg-surface border-2 border-dashed border-border rounded-full">
         {children}
       </span>
     </motion.div>

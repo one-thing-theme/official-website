@@ -1,5 +1,3 @@
-"use client"
-
 import { MarqueeAnimation, SectionLabel } from "@shared/components"
 import * as React from "react"
 import { TestimonialItem } from "./testimonial-item"
@@ -45,11 +43,11 @@ export function TestimonialSection(): React.ReactElement {
         >
           <SectionLabel>Wall of love</SectionLabel>
 
-          <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
+          <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-10/12 laptop:w-7/12">
             Loved by developers around the world
           </h2>
 
-          <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+          <p className="leading-relaxed! tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
             Developers around the world loves simplicity and clean looks, they
             love us and here’s what they say about us.
           </p>

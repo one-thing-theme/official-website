@@ -14,7 +14,7 @@ function Brand(): React.ReactElement {
   return (
     <Link
       to={"/"}
-      className="flex items-center gap-3 h-12 rounded-2xl border-2 border-dashed border-border bg-surface pl-2 pr-4 transition-all duration-300 hover:-translate-y-1 hover:border-link cursor-pointer"
+      className="flex items-center gap-3 h-12 rounded-2xl border-2 border-dashed border-primary bg-surface pl-2 pr-4 transition-all duration-300 hover:-translate-y-1 hover:border-link cursor-pointer"
     >
       <DynamicLogo size={30} />
       <span className="font-medium text-sm">One Thing Theme</span>
@@ -74,13 +74,13 @@ function Navigation(): React.ReactElement {
 
 function Actions(): React.ReactElement {
   return (
-    <div className="hidden tablet:flex items-center h-12 bg-surface border-2 border-dashed border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1 hover:border-link">
+    <div className="hidden tablet:flex items-center h-12 bg-surface border-2 border-dashed border-primary rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1 hover:border-link">
       <ul className="flex items-center gap-7">
         <NavigationItem
-          href="https://github.com/orgs/one-thing-theme/discussions"
+          href="https://github.com/sponsors/nyomansunima"
           target="_blank"
         >
-          Contribute
+          Sponsors
         </NavigationItem>
         <NavigationItem
           href="https://github.com/one-thing-theme"

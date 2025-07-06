@@ -1,5 +1,3 @@
-"use client"
-
 import { SectionLabel, MarqueeAnimation } from "@shared/components"
 import * as React from "react"
 import { GalleryItem } from "./gallery-item"
@@ -24,11 +22,11 @@ export function GallerySection(): React.ReactElement {
         >
           <SectionLabel>How it’s live</SectionLabel>
 
-          <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
+          <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-10/12 laptop:w-7/12">
             See your editor with new clean looks
           </h2>
 
-          <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+          <p className="leading-relaxed! tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
             Design with simplicity and clean look principle allow you to moving
             forward and focus on your own code, without distractions and high
             content readability.
