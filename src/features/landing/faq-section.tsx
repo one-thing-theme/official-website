@@ -1,5 +1,3 @@
-"use client"
-
 import { SectionLabel, Accordion } from "@shared/components"
 import * as React from "react"
 import { FAQItem } from "./faq-item"
@@ -66,17 +64,17 @@ export function FAQSection(): React.ReactElement {
       >
         <SectionLabel>FAQs</SectionLabel>
 
-        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
+        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-10/12 laptop:w-7/12">
           Most asked questions
         </h2>
 
-        <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+        <p className="leading-relaxed! tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
           Most asked questions by developers around the world. Find what matters
           and need to know here.
         </p>
 
         <div className="flex justify-center items-center mt-16 w-full">
-          <div className="flex justify-center w-11/12 tablet:w-5/12">
+          <div className="flex justify-center w-11/12 tablet:w-10/12 laptop:w-5/12">
             <Accordion
               type="single"
               collapsible

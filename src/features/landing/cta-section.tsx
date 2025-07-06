@@ -1,9 +1,35 @@
-"use client"
-
 import { SectionLabel, Button } from "@shared/components"
 import { Link } from "react-router"
 import * as React from "react"
 import { motion } from "motion/react"
+
+type Item = {
+  label: string
+  url: string
+}
+
+const items: Item[] = [
+  {
+    label: "Vscode",
+    url: "https://marketplace.visualstudio.com/items?itemName=weecraft.brook-code-theme",
+  },
+  {
+    label: "Zed",
+    url: "https://zed.dev/extensions?query=one+thing+theme",
+  },
+  {
+    label: "Ohmyposh",
+    url: "https://github.com/one-thing-theme/oh-my-posh",
+  },
+  {
+    label: "Ghostty",
+    url: "https://github.com/one-thing-theme/ghostty",
+  },
+  {
+    label: "Bat",
+    url: "https://github.com/one-thing-theme/bat",
+  },
+]
 
 export function CTASection(): React.ReactElement {
   return (
@@ -20,54 +46,35 @@ export function CTASection(): React.ReactElement {
       >
         <SectionLabel>Get Started</SectionLabel>
 
-        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-7/12">
+        <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-10/12 laptop:w-7/12">
           Code on your editor with clean visuals
         </h2>
 
-        <p className="leading-relaxed! tablet:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+        <p className="leading-relaxed! tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
           Start code on your own code editor with our code theme, try the clean
           looks and also the simplicity.
         </p>
 
-        <div className="flex flex-wrap justify-center items-center mt-16 tablet:w-5/12 gap-x-4 tablet:gap-y-3">
-          <Button
-            variant={"text"}
-            className="transition-all duration-300 hover:-translate-y-1"
-          >
-            <Link
-              to={
-                "https://marketplace.visualstudio.com/items?itemName=weecraft.brook-code-theme"
-              }
-              target="_blank"
-            >
-              Visual studio code
-            </Link>
-          </Button>
-          <Button
-            variant={"text"}
-            className="transition-all duration-300 hover:-translate-y-1"
-          >
-            <Link
-              to={"https://zed.dev/extensions?query=brook+code+theme"}
-              target="_blank"
-            >
-              Zed
-            </Link>
-          </Button>
-          <Button
-            variant={"text"}
-            className="transition-all duration-300 hover:-translate-y-1"
-          >
-            <Link
-              to={"https://github.com/one-thing-theme/oh-my-posh"}
-              target="_blank"
-            >
-              Oh my posh
-            </Link>
-          </Button>
-          <Button variant={"text"} className="text-foreground/50">
-            Other (coming soon)
-          </Button>
+        <div className="flex flex-col space-y-3 justify-center items-center mt-16 tablet:w-5/12 gap-x-4 tablet:gap-y-3">
+          <ul className="flex flex-col gap-3">
+            {items.map(({ label, url }, i) => (
+              <li
+                key={i}
+                className="flex items-center transition-all duration-300 hover:-translate-y-1"
+              >
+                <Link
+                  to={url}
+                  target="_blank"
+                  className="flex items-center gap-2 text-link cursor-pointer"
+                >
+                  <i className="fi fi-rr-circle-small" />
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <span className="text-foreground/50">Coming soon ...</span>
         </div>
       </motion.div>
     </section>
