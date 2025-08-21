@@ -16,7 +16,7 @@ export function NavigationItem({
 }: NavigationItemProps): React.ReactElement {
   return (
     <li
-      className={`text-sm text-foreground/80 transition-all duration-300 hover:text-link ${className}`}
+      className={`text-sm text-foreground/60 transition-all duration-300 hover:text-foreground ${className}`}
     >
       <Link to={href} target={target}>
         {children}

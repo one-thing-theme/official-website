@@ -1,7 +1,4 @@
-"use client"
-
 import * as React from "react"
-import { DynamicLogo } from "./dynamic-logo"
 import { NavigationItem } from "./navigation-link"
 import { Link } from "react-router"
 import { useMotionValueEvent, useScroll, motion } from "motion/react"
@@ -10,21 +7,18 @@ interface ProductsNavigationItemProps {
   children: React.ReactNode
 }
 
-function Brand(): React.ReactElement {
+function Brand() {
   return (
     <Link
       to={"/"}
-      className="flex items-center gap-3 h-12 rounded-2xl border-2 border-dashed border-primary bg-surface pl-2 pr-4 transition-all duration-300 hover:-translate-y-1 hover:border-link cursor-pointer"
+      className="flex items-center gap-3 h-12 rounded-full bg-secondary px-4 cursor-pointer"
     >
-      <DynamicLogo size={30} />
-      <span className="font-medium text-sm">One Thing Theme</span>
+      <span className="font-medium text-sm">One thing theme.</span>
     </Link>
   )
 }
 
-function ProductsNavigationItem({
-  children,
-}: ProductsNavigationItemProps): React.ReactElement {
+function ProductsNavigationItem({ children }: ProductsNavigationItemProps) {
   return (
     <li
       className={`flex items-center gap-2 text-sm text-foreground/60 transition-all duration-300 hover:text-foreground cursor-pointer relative group`}
@@ -51,13 +45,10 @@ function ProductsNavigationItem({
   )
 }
 
-function Navigation(): React.ReactElement {
+function Navigation() {
   return (
-    <nav className="hidden laptop:flex items-center h-12 bg-surface border-2 border-dashed border-border rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1 hover:border-link">
+    <nav className="hidden laptop:flex items-center h-12 bg-secondary rounded-full px-5">
       <ul className="flex items-center gap-7">
-        <ProductsNavigationItem>
-          Products <i className="fi fi-rr-angle-small-down" />
-        </ProductsNavigationItem>
         <NavigationItem href="/changelog">What's new</NavigationItem>
         <NavigationItem href="/docs">Docs</NavigationItem>
         <NavigationItem
@@ -72,9 +63,9 @@ function Navigation(): React.ReactElement {
   )
 }
 
-function Actions(): React.ReactElement {
+function Actions() {
   return (
-    <div className="hidden tablet:flex items-center h-12 bg-surface border-2 border-dashed border-primary rounded-2xl px-5 transition-all duration-200 hover:-translate-y-1 hover:border-link">
+    <div className="hidden tablet:flex items-center h-12 bg-secondary rounded-full px-5">
       <ul className="flex items-center gap-7">
         <NavigationItem
           href="https://github.com/sponsors/nyomansunima"
@@ -93,7 +84,7 @@ function Actions(): React.ReactElement {
   )
 }
 
-export function Header(): React.ReactElement {
+export function Header() {
   const { scrollY } = useScroll()
   const [scrollDirection, setScrollDirection] = React.useState<"up" | "down">(
     "up",

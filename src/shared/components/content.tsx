@@ -1,7 +1,7 @@
 import { mergeClass } from "@shared/libs"
 import type { ImgHTMLAttributes } from "react"
 
-type ArticleContentProps = {
+interface ArticleContentProps {
   children: React.ReactNode
   className?: string
 }
