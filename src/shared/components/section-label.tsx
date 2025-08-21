@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import { motion } from "motion/react"
 
@@ -18,7 +16,7 @@ export function SectionLabel({
       transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
       viewport={{ once: true }}
     >
-      <span className="font-mono flex items-center gap-2 h-8 px-4 text-[13px] tracking-tight text-center text-foreground/60 bg-surface border-2 border-dashed border-border rounded-full">
+      <span className="font-mono font-medium flex items-center gap-2 text-xs tracking-tight text-center text-foreground/40">
         {children}
       </span>
     </motion.div>
