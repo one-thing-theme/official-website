@@ -1,24 +1,43 @@
 # This GitHub Actions workflow runs two jobs:
 #
-# 1. `lint`: Checks the code for linting issues using the Bun runtime.
+# 1. `typecheck`: Check the typescript code
 # 2. `format`: Formats the code using the Bun runtime.
+# 3. `lint`: Checks the code for linting issues using the Bun runtime.
 #
 # The workflow checks out the code, sets up the Bun environment, and then runs the
 # respective linting and formatting commands.
 
-name: Beautify Code
+name: Beautify
 
 on: ["push", "pull_request"]
 
 jobs:
-  format:
-    name: Format Code
+  typecheck:
+    name: Typecheck
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
         uses: actions/checkout@v5
 
-      - name: Setup Bun Environment
+      - name: Setup bun environment
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Typecheck the code
+        run: bun run typecheck
+
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v5
+
+      - name: Setup bun environment
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
@@ -28,3 +47,21 @@ jobs:
 
       - name: Format the code
         run: bun run format
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v5
+
+      - name: Setup bun environment
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Lint the code
+        run: bun run lint
