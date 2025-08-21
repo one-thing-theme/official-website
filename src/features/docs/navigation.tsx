@@ -1,25 +1,25 @@
 import { mergeClass } from "@shared/libs"
 import { Link, useLocation } from "react-router"
 
-type navigationItem = {
+interface navigationItem {
   label: string
   link: string
 }
 
-type Navigation = {
+interface NavigationData {
   group: string
   list: navigationItem[]
 }
 
-type NavigationGroupProps = {
-  group: Navigation
+interface NavigationGroupProps {
+  group: NavigationData
 }
 
-type NavigationItemProps = {
+interface NavigationItemProps {
   item: navigationItem
 }
 
-const navigations: Navigation[] = [
+const navigations: NavigationData[] = [
   {
     group: "Getting Started",
     list: [

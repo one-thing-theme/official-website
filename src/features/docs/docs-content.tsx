@@ -2,7 +2,7 @@ import { ArticleContent } from "@shared/components"
 import { DocsMarkdownContent } from "./docs-markdown-content"
 import type { DocDetail } from "./docs-service"
 
-type Props = {
+interface Props {
   doc: DocDetail
 }
 

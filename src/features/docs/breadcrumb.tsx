@@ -1,7 +1,7 @@
-import { type BreadScrumb } from "./docs-service"
+import type { BreadScrumb } from "./docs-service"
 import { Link } from "react-router"
 
-type Props = {
+interface Props {
   breadscrumbs: BreadScrumb[]
 }
 

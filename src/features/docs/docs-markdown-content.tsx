@@ -3,7 +3,7 @@ import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
 import { ContentImage } from "@shared/components"
 
-type Props = {
+interface Props {
   content: any
 }
 

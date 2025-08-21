@@ -1,20 +1,20 @@
 import * as fs from "fs/promises"
-import { type TocItem } from "remark-flexible-toc"
 import path from "path"
 import { parseMarkdown } from "@shared/libs"
+import type { TocItem } from "remark-flexible-toc"
 
-type DocFrontMatter = {
+interface DocFrontMatter {
   title: string
   description: string
   publishedAt: string
 }
 
-export type DocDetail = {
+export interface DocDetail {
   data: DocFrontMatter
   content: any
 }
 
-export type BreadScrumb = {
+export interface BreadScrumb {
   title: string
   link: string
 }
@@ -22,7 +22,7 @@ export type BreadScrumb = {
 const DOCS_PATH = "/src/features/docs/contents"
 
 function parseSlug(slug: string): string {
-  return slug == "" ? "introduction" : slug
+  return slug === "" ? "introduction" : slug
 }
 
 async function loadRawFile(slug: string) {

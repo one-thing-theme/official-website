@@ -2,7 +2,7 @@ import { mergeClass } from "@shared/libs"
 import { Link } from "react-router"
 import type { TocItem } from "remark-flexible-toc"
 
-type Props = {
+interface Props {
   toc: TocItem[]
 }
 
