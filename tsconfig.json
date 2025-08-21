@@ -17,9 +17,9 @@
     "paths": {
       "@shared/*": ["./src/shared/*"],
       "@features/*": ["./src/features/*"],
-      "@routes/*": ["./src/routes/*"],
-      "~/*": ["./src/*"],
-      "@/*": ["./*"]
+      "@app/*": ["./src/app/*"],
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     },
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
