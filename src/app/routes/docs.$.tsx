@@ -8,7 +8,7 @@ import {
   TableOfContent,
 } from "@features/docs"
 import { generatedMetadata } from "@shared/libs"
-import type { MetaArgs } from "react-router"
+import type { Route } from "./+types/docs.$"
 
 export async function loader({ params }) {
   const slug = params["*"]
@@ -35,7 +35,7 @@ export function meta({ data }) {
   })
 }
 
-export default async function DocsPage({ loaderData }) {
+export default async function DocsPage({ loaderData }: Route.ComponentProps) {
   const { doc } = loaderData
 
   return (

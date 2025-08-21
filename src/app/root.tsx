@@ -6,13 +6,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "react-router"
 import type { Route } from "./+types/root"
 import "@shared/styles/globals.css"
 import { Button, Footer, Header } from "@shared/components"
 import { loadConfig, loadServerEnv } from "@shared/libs"
 
-type LayoutProps = {
+interface LayoutProps {
   children: React.ReactNode
 }
 
@@ -25,22 +26,12 @@ export function loader() {
 export function links() {
   const config = loadConfig()
 
-  return [
-    { rel: "canonical", href: config.app.host },
-    { rel: "preconnect", href: "https://fonts.googleapis.com" },
-    {
-      rel: "preconnect",
-      href: "https://fonts.gstatic.com",
-      crossOrigin: "anonymous",
-    },
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap",
-    },
-  ]
+  return [{ rel: "canonical", href: config.app.host }]
 }
 
 export function Layout({ children }: LayoutProps) {
+  const { ENV } = useLoaderData<typeof loader>()
+
   return (
     <html lang="en">
       <head>
@@ -54,6 +45,11 @@ export function Layout({ children }: LayoutProps) {
         {children}
         <Footer />
         <ScrollRestoration />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__ENV__ = ${JSON.stringify(ENV)}`,
+          }}
+        />
         <Scripts />
       </body>
     </html>
@@ -95,17 +91,6 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   )
 }
 
-export default function App({ loaderData }: Route.ComponentProps) {
-  const { ENV } = loaderData
-
-  return (
-    <>
-      <Outlet />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.__ENV__ = ${JSON.stringify(ENV)}`,
-        }}
-      />
-    </>
-  )
+export default function App() {
+  return <Outlet />
 }

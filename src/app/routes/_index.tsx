@@ -2,9 +2,7 @@ import {
   CTASection,
   FAQSection,
   FeatureSection,
-  GallerySection,
   HeroSection,
-  TestimonialSection,
 } from "@features/landing"
 import { generatedMetadata } from "@shared/libs"
 
@@ -21,8 +19,6 @@ export default function LandingPage() {
     <main className="flex flex-col">
       <HeroSection />
       <FeatureSection />
-      <GallerySection />
-      <TestimonialSection />
       <FAQSection />
       <CTASection />
     </main>
