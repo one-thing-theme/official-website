@@ -1,9 +1,9 @@
-import { SectionLabel, Button } from "@shared/components"
+import { SectionLabel } from "@shared/components"
 import { Link } from "react-router"
 import * as React from "react"
 import { motion } from "motion/react"
 
-type Item = {
+interface Item {
   label: string
   url: string
 }

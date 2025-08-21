@@ -1,13 +1,12 @@
 import { SectionLabel, Button } from "@shared/components"
 import * as React from "react"
-import { ImageShot } from "./image-shot"
 import { motion } from "motion/react"
 import { Link } from "react-router"
 
 export function HeroSection(): React.ReactElement {
   return (
     <section className="flex py-36 container mx-auto px-5 tablet:px-0">
-      <div className="flex flex-col items-center mx-auto w-full relative z-30">
+      <div className="flex flex-col items-center mx-auto w-full relative z-30 tablet:pt-14">
         <SectionLabel>
           <i className="fi fi-sr-bolt" />
           New Release: Zed Theme
@@ -52,10 +51,6 @@ export function HeroSection(): React.ReactElement {
             </Link>
           </Button>
         </motion.div>
-
-        <div className="flex items-center mt-20 tablet:mt-36 w-full">
-          <ImageShot />
-        </div>
       </div>
     </section>
   )
