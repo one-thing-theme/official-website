@@ -1,8 +1,4 @@
-# Brook Code Theme Official Website
-
-_"Brook Code Theme official website | The best clean code editor theme that combine simplicity and clean look"_
-
-## About
+# One Thing Theme Official Site
 
 This project is about the official website of Brook Code Theme. The website used to showcase the product and to become the landing page for the users who want to know about the product. Build using simple and clean look to ensure the user can focus on the content.
 
