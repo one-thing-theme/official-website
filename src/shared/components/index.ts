@@ -1,15 +1,7 @@
 export * from "./ui/accordion"
 export * from "./ui/button"
-export * from "./ui/sonner"
-export * from "./ui/toast"
-export * from "./ui/tooltip"
-
-export * from "./animation/marquee-animation"
-export * from "./animation/meteors"
-export * from "./animation/spotlight"
 
 export * from "./content"
-export * from "./dynamic-logo"
 export * from "./footer"
 export * from "./header"
 export * from "./navigation-link"
