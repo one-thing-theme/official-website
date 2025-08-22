@@ -5,7 +5,10 @@ import { Link } from "react-router"
 
 export function HeroSection(): React.ReactElement {
   return (
-    <section className="flex py-36 container mx-auto px-5 tablet:px-0">
+    <section
+      className="flex py-36 container mx-auto px-5 tablet:px-0"
+      id="hero"
+    >
       <div className="flex flex-col items-center mx-auto w-full relative z-30 tablet:pt-14">
         <SectionLabel>
           <i className="fi fi-sr-bolt" />
@@ -39,15 +42,21 @@ export function HeroSection(): React.ReactElement {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
           viewport={{ once: true, margin: "-20% 0px" }}
-          className="flex items-center mt-16"
+          className="flex items-center mt-16 gap-5"
         >
           <Button
             className="transition-all duration-300 hover:-translate-y-1"
             asChild
           >
-            <Link to={"/#get-started"}>
-              Download Now
-              <i className="fi fi-rr-arrow-right" />
+            <Link to={"/#get-started"}>Download</Link>
+          </Button>
+          <Button
+            variant={"secondary"}
+            className="transition-all duration-300 hover:-translate-y-1"
+            asChild
+          >
+            <Link to={"https://github.com/one-thing-theme"} target="_blank">
+              Github
             </Link>
           </Button>
         </motion.div>

@@ -50,31 +50,25 @@ export function CTASection(): React.ReactElement {
           Code on your editor with clean visuals
         </h2>
 
-        <p className="leading-relaxed! tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+        <p className="leading-7 tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
           Start code on your own code editor with our code theme, try the clean
           looks and also the simplicity.
         </p>
 
         <div className="flex flex-col space-y-3 justify-center items-center mt-16 tablet:w-5/12 gap-x-4 tablet:gap-y-3">
-          <ul className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3">
             {items.map(({ label, url }, i) => (
-              <li
+              <Link
+                to={url}
                 key={i}
-                className="flex items-center transition-all duration-300 hover:-translate-y-1"
+                target="_blank"
+                className="flex items-center gap-2"
               >
-                <Link
-                  to={url}
-                  target="_blank"
-                  className="flex items-center gap-2 text-link cursor-pointer"
-                >
-                  <i className="fi fi-rr-circle-small" />
-                  {label}
-                </Link>
-              </li>
+                <i className="fi fi-sr-bullet text-foreground/40" />
+                {label}
+              </Link>
             ))}
-          </ul>
-
-          <span className="text-foreground/50">Coming soon ...</span>
+          </div>
         </div>
       </motion.div>
     </section>
