@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { mergeClass } from "@shared/libs"
@@ -18,7 +16,7 @@ const AccordionItem = ({
   <AccordionPrimitive.Item
     ref={ref}
     className={mergeClass(
-      "flex flex-col border-2 border-dashed border-border bg-surface w-full px-4 rounded-2xl",
+      "flex flex-col bg-secondary/80 w-full px-4 rounded-2xl",
       className,
     )}
     {...props}
@@ -40,7 +38,7 @@ const AccordionTrigger = ({
     <AccordionPrimitive.Trigger
       ref={ref}
       className={mergeClass(
-        "flex flex-1 text-left items-center justify-between py-3 text-sm font-medium transition-all [&[data-state=open]>i.fi]:rotate-180 cursor-pointer",
+        "flex flex-1 text-left items-center justify-between py-4 text-sm transition-all [&[data-state=open]>i.fi]:rotate-180 cursor-pointer",
         className,
       )}
       {...props}
