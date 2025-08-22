@@ -65,10 +65,12 @@ export function FAQSection(): React.ReactElement {
         <SectionLabel>FAQs</SectionLabel>
 
         <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight! text-balance text-center mt-8 tablet:w-10/12 laptop:w-7/12">
-          Most asked questions
+          Most asked
+          <br />
+          questions
         </h2>
 
-        <p className="leading-relaxed! tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+        <p className="leading-7 tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
           Most asked questions by developers around the world. Find what matters
           and need to know here.
         </p>
