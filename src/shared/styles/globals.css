@@ -29,8 +29,6 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
-  --text-base: 0.9375rem;
-
   --color-background: hsl(0 0 100%);
   --color-foreground: hsl(0 0 0%);
   --color-surface: hsl(0 0 100%);
