@@ -16,7 +16,7 @@ export function SectionLabel({
       transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
       viewport={{ once: true }}
     >
-      <span className="font-mono font-medium flex items-center gap-2 text-xs tracking-tight text-center text-foreground/40">
+      <span className="font-medium flex items-center gap-2 text-sm text-center text-foreground/40">
         {children}
       </span>
     </motion.div>
