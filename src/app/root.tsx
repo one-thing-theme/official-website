@@ -10,7 +10,7 @@ import {
 } from "react-router"
 import type { Route } from "./+types/root"
 import "@shared/styles/globals.css"
-import { Button, Footer, Header } from "@shared/components"
+import { Button, Header } from "@shared/components"
 import { loadConfig, loadServerEnv } from "@shared/libs"
 
 interface LayoutProps {
@@ -43,7 +43,6 @@ export function Layout({ children }: LayoutProps) {
       <body>
         <Header />
         {children}
-        <Footer />
         <ScrollRestoration />
         <script
           dangerouslySetInnerHTML={{
