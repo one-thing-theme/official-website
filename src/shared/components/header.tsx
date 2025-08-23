@@ -1,23 +1,26 @@
 import * as React from "react"
-import { NavigationItem } from "./navigation-link"
 import { useMotionValueEvent, useScroll, motion } from "motion/react"
+import { Link } from "react-router"
 
-function Navigation() {
+interface NavigationItemProps {
+  href: string
+  target?: string
+  children: React.ReactNode
+}
+
+export function NavigationItem({
+  children,
+  href,
+  target,
+}: NavigationItemProps) {
   return (
-    <nav className="hidden laptop:flex items-center h-12 bg-secondary rounded-full px-5">
-      <ul className="flex items-center gap-7">
-        <NavigationItem href="/#hero">Home</NavigationItem>
-        <NavigationItem href="/changelog">What's new</NavigationItem>
-        <NavigationItem href="/docs">Docs</NavigationItem>
-        <NavigationItem
-          href="https://github.com/sponsors/nyomansunima"
-          target="_blank"
-        >
-          Sponsor
-        </NavigationItem>
-        <NavigationItem href="/#get-started">Download</NavigationItem>
-      </ul>
-    </nav>
+    <Link
+      to={href}
+      target={target}
+      className="text-sm text-foreground/60 transition-all duration-300 hover:text-foreground"
+    >
+      {children}
+    </Link>
   )
 }
 
@@ -38,7 +41,18 @@ export function Header() {
       animate={{ y: scrollDirection === "down" ? -200 : 0 }}
       className="flex fixed top-4 tablet:top-6 inset-x-3 tablet:inset-x-10 z-50 justify-center"
     >
-      <Navigation />
+      <nav className="hidden laptop:flex items-center h-12 bg-secondary rounded-full px-5 gap-7">
+        <NavigationItem href="/#hero">Home</NavigationItem>
+        <NavigationItem href="/changelog">What's new</NavigationItem>
+        <NavigationItem href="/docs">Docs</NavigationItem>
+        <NavigationItem
+          href="https://github.com/sponsors/nyomansunima"
+          target="_blank"
+        >
+          Sponsor
+        </NavigationItem>
+        <NavigationItem href="/#get-started">Download</NavigationItem>
+      </nav>
     </motion.header>
   )
 }
