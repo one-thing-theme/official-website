@@ -2,7 +2,7 @@
 
 This project is about the official website of Brook Code Theme. The website used to showcase the product and to become the landing page for the users who want to know about the product. Build using simple and clean look to ensure the user can focus on the content.
 
-You can access this site on _[https://brookcodetheme.vercel.app](https://brookcodetheme.vercel.app)_
+You can access this site on _[https://onethingtheme.vercel.app](https://onethingtheme.vercel.app)_
 
 This project is built to support the product and allow the user to know more about the product. Also allow the public know about the product.
 
@@ -12,12 +12,9 @@ Since building this project here are list about stack, site, tech and any librar
 
 - [Next.js](https://nextjs.org)
 - [Tailwincss](https://tailwindcss.com)
-- [Lenis Scroll Smoother](https://lenis.studiofreight.com)
 - [Vercel](https://vercel.com)
 - [Shadcn UI](https://ui.shadcn.com)
 - [Radix UI](https://radix-ui.com)
-- [PostHog](https://posthog.com)
-- [Framer Motion](https://www.framer.com/motion)
 - [React](https://reactjs.org)
 - Etc.
 
