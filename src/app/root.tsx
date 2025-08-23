@@ -12,6 +12,7 @@ import type { Route } from "./+types/root"
 import "@shared/styles/globals.css"
 import { Button, Header } from "@shared/components"
 import { loadConfig, loadServerEnv } from "@shared/libs"
+import { ThemeProvider } from "next-themes"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -33,7 +34,7 @@ export function Layout({ children }: LayoutProps) {
   const { ENV } = useLoaderData<typeof loader>()
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,8 +42,15 @@ export function Layout({ children }: LayoutProps) {
         <Links />
       </head>
       <body>
-        <Header />
-        {children}
+        <ThemeProvider
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+        </ThemeProvider>
+
         <ScrollRestoration />
         <script
           dangerouslySetInnerHTML={{
