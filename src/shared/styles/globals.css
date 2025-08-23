@@ -13,6 +13,34 @@
 @plugin 'tailwindcss-animate';
 @plugin '@tailwindcss/typography';
 
+:root {
+  --background-color: hsl(0 0 100%);
+  --foreground-color: hsl(0 0 10%);
+  --surface-color: hsl(0 0 100%);
+  --border-color: hsl(0 0 92%);
+  --input-color: hsl(0 0 96%);
+  --primary-color: hsl(0 0 0%);
+  --primary-foreground-color: hsl(0 0 98%);
+  --secondary-color: hsl(0 0 96%);
+  --secondary-foreground-color: hsl(0 0 10%);
+  --link-color: hsl(221 83 50%);
+  --accent-color: hsl(0 0 40%);
+}
+
+[data-theme="dark"] {
+  --background-color: hsl(0 0 8%);
+  --foreground-color: hsl(0 0 75%);
+  --surface-color: hsl(0 0 8%);
+  --border-color: hsl(0 0 10%);
+  --input-color: hsl(0 0 10%);
+  --primary-color: hsl(0 0 90%);
+  --primary-foreground-color: hsl(0 0 0%);
+  --secondary-color: hsl(0 0 12%);
+  --secondary-foreground-color: hsl(0 0 75%);
+  --link-color: hsl(221 83 50%);
+  --accent-color: hsl(0 0 40%);
+}
+
 @theme {
   --font-*: initial;
   --font-sans: "Inter", sans-serif;
@@ -29,20 +57,17 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
-  --color-background: hsl(0 0 100%);
-  --color-foreground: hsl(0 0 0%);
-  --color-surface: hsl(0 0 100%);
-  --color-border: hsl(0 0 94%);
-  --color-input: hsl(0 0 97%);
-  --color-primary: hsl(0 0 0%);
-  --color-primary-foreground: hsl(0 0 96%);
-  --color-secondary: hsl(0 0 96%);
-  --color-secondary-foreground: hsl(0 0 0%);
-  --color-destructive: hsl(0 100% 50%);
-  --color-destructive-foreground: hsl(210 40% 98%);
-  --color-link: oklch(54.6% 0.245 262.881);
-  --color-accent: oklch(54.6% 0.245 262.881);
-  --color-accent-foreground: hsl(0 0 96%);
+  --color-background: var(--background-color);
+  --color-foreground: var(--foreground-color);
+  --color-surface: var(--surface-color);
+  --color-border: var(--border-color);
+  --color-input: var(--input-color);
+  --color-primary: var(--primary-color);
+  --color-primary-foreground: var(--primary-foreground-color);
+  --color-secondary: var(--secondary-color);
+  --color-secondary-foreground: var(--secondary-foreground-color);
+  --color-link: var(--link-color);
+  --color-accent: var(--accent-color);
 
   @keyframes accordion-down {
     from {
@@ -135,5 +160,60 @@
 
   .fi {
     @apply flex justify-center items-center text-sm;
+  }
+}
+
+@utility prose {
+  --tw-prose-headings: var(--color-foreground);
+  --tw-prose-body: var(--color-foreground);
+  --tw-prose-links: var(--color-foreground);
+  --tw-prose-bold: var(--color-foreground);
+  --tw-prose-counters: var(--color-foreground);
+  --tw-prose-bullets: var(--color-foreground);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-secondary);
+  --tw-prose-quote-borders: var(--color-foreground);
+  --tw-prose-captions: var(--color-secondary);
+  --tw-prose-code: var(--color-foreground);
+  --tw-prose-pre-code: var(--color-foreground);
+  --tw-prose-pre-bg: var(--color-surface);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+
+  font-size: var(--text-base);
+  line-height: calc(var(--spacing) * 7) !important;
+  font-weight: var(--font-weight-normal);
+
+  a {
+    text-decoration: "none";
+    font-weight: 400 !important;
+
+    &:hover {
+      text-decoration: "underline";
+    }
+  }
+
+  em {
+    font-style: "italic";
+    color: var(--color-accent);
+  }
+
+  strong {
+    font-weight: var(--font-weight-normal);
+  }
+
+  h1 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+  }
+
+  h2 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+  }
+
+  h3 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
   }
 }
