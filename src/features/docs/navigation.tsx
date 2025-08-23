@@ -70,7 +70,7 @@ function NavigationGroup({ group }: NavigationGroupProps) {
   return (
     <div className="flex flex-col text-sm gap-3">
       <span className="ml-3 font-medium">{groupName}</span>
-      <ul className="flex flex-col w-full">
+      <ul className="flex flex-col gap-1 w-full">
         {list.map((item, index) => (
           <NavigationItem key={index} item={item} />
         ))}
