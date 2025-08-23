@@ -8,7 +8,7 @@ import { generatedMetadata } from "@shared/libs"
 
 export function meta() {
   return generatedMetadata({
-    title: "Minimal & Simple productivity Theme | One Thing Theme",
+    title: "Minimal code theme | One Thing Theme",
     description:
       "The best clean code editor theme that combine simplicity and clean look",
   })
