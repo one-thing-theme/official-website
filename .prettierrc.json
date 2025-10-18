@@ -1,6 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/prettierrc.json",
-  "semi": false,
-  "trailingComma": "all",
-  "endOfLine": "auto"
-}
