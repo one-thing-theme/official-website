@@ -1,12 +1,18 @@
+# General
 .DS_Store
 node_modules/
 
-# React Router
-.react-router/
-build/
+# Tanstack
+.output
+build
+dist
+.tanstack
+.nitro
 
 # environment variables
 .env
+.local
+*.local
 
 # vercel
 .vercel
