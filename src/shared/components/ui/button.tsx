@@ -1,11 +1,11 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva } from "class-variance-authority"
-import type { VariantProps } from "class-variance-authority"
-import { mergeClass } from "@shared/libs"
+import { Slot } from "@radix-ui/react-slot";
+import { mergeClass } from "@shared/libs";
+import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
+import type * as React from "react";
 
 const buttonVariants = cva(
-  "flex items-center justify-center font-medium whitespace-nowrap text-[13px] leading-none! transition-all duration-300 gap-2 group relative",
+  "group relative flex items-center justify-center gap-2 whitespace-nowrap font-medium text-[13px] leading-none! transition-all duration-300",
   {
     variants: {
       variant: {
@@ -14,12 +14,12 @@ const buttonVariants = cva(
         outline: "border border-border bg-background text-foreground",
         text: "text-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground border hover:bg-secondary/60 border-border",
+          "border border-border bg-secondary text-secondary-foreground hover:bg-secondary/60",
       },
       size: {
-        base: "h-11 px-6 rounded-3xl",
-        sm: "h-9 px-4 rounded-lg text-xs",
-        lg: "h-14 px-5 rounded-xl",
+        base: "h-11 rounded-3xl px-6",
+        sm: "h-9 rounded-lg px-4 text-xs",
+        lg: "h-14 rounded-xl px-5",
         icon: "h-10 w-10 rounded-2xl",
       },
     },
@@ -27,13 +27,13 @@ const buttonVariants = cva(
       variant: "primary",
       size: "base",
     },
-  },
-)
+  }
+);
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 const Button = ({
@@ -44,16 +44,16 @@ const Button = ({
   asChild = false,
   ...props
 }: ButtonProps & { ref?: React.RefObject<HTMLButtonElement | null> }) => {
-  const Comp = asChild ? Slot : "button"
+  const Comp = asChild ? Slot : "button";
   return (
     <Comp
       className={mergeClass(buttonVariants({ variant, size, className }))}
       ref={ref}
       {...props}
     />
-  )
-}
+  );
+};
 
-Button.displayName = "Button"
+Button.displayName = "Button";
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

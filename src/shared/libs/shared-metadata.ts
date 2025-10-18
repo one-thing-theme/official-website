@@ -1,18 +1,22 @@
-import { loadConfig } from "./config"
-
-interface GeneratedMetadataInput {
-  title: string
-  description: string
-  image?: string
-}
+type GeneratedMetadataInput = {
+  title: string;
+  description: string;
+  image?: string;
+};
 
 export function generatedMetadata({
   title,
   description,
   image,
-}: GeneratedMetadataInput) {
-  const config = loadConfig()
-
+}: GeneratedMetadataInput):
+  | (
+      | React.DetailedHTMLProps<
+          React.MetaHTMLAttributes<HTMLMetaElement>,
+          HTMLMetaElement
+        >
+      | undefined
+    )[]
+  | undefined {
   return [
     { title },
     {
@@ -26,7 +30,7 @@ export function generatedMetadata({
     { name: "creator", content: "moono" },
     { name: "publisher", content: "moono" },
     { name: "application-name", content: "Moono" },
-    { name: "google-site-verification", content: config.verification.google },
+    { name: "google-site-verification", content: "" },
     { name: "category", content: "Websites" },
     { name: "generator", content: "React Router" },
     { name: "pinterest-rich-pin", content: "true" },
@@ -65,5 +69,5 @@ export function generatedMetadata({
         image ??
         "https://cdn.hashnode.com/res/hashnode/image/upload/v1732187828243/cc1d78a8-387f-457e-841e-20f9528588e9.png",
     },
-  ]
+  ];
 }

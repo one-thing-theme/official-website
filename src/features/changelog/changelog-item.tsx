@@ -1,32 +1,30 @@
-import { Link } from "react-router"
+export type ChangelogData = {
+  title: string;
+  date: string;
+  image: string;
+  description: string;
+  url: string;
+};
 
-export interface ChangelogData {
-  title: string
-  date: string
-  image: string
-  description: string
-  url: string
-}
-
-interface ChangelogItemProps {
-  data: ChangelogData
-}
+type ChangelogItemProps = {
+  data: ChangelogData;
+};
 
 export function ChangelogItem({ data }: ChangelogItemProps) {
-  const { title, date, image, description, url } = data
+  const { title, date, image, description, url } = data;
 
   return (
-    <Link to={url} target="_blank" className="flex flex-col">
+    <a className="flex flex-col" href={url} target="_blank">
       <div className="flex items-center gap-4">
         <h3 className="font-medium">{title}</h3>
-        <span className="text-sm text-foreground/40">{date}</span>
+        <span className="text-foreground/40 text-sm">{date}</span>
       </div>
 
-      <p className="leading-7 text-pretty mt-3">{description}</p>
+      <p className="mt-3 text-pretty leading-7">{description}</p>
 
-      <div className="relative w-full h-[180px] tablet:h-[312px] overflow-hidden rounded-xl mt-6">
-        <img src={image} alt={title} className="object-cover" />
+      <div className="relative mt-6 h-[180px] tablet:h-[312px] w-full overflow-hidden rounded-xl">
+        <img alt={title} className="object-cover" src={image} />
       </div>
-    </Link>
-  )
+    </a>
+  );
 }

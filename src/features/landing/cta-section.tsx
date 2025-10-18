@@ -1,10 +1,9 @@
-import { SectionLabel } from "@shared/components"
-import { Link } from "react-router"
+import { SectionLabel } from "@shared/components";
 
-interface Item {
-  label: string
-  url: string
-}
+type Item = {
+  label: string;
+  url: string;
+};
 
 const items: Item[] = [
   {
@@ -27,42 +26,42 @@ const items: Item[] = [
     label: "Bat",
     url: "https://github.com/one-thing-theme/bat",
   },
-]
+];
 
 export function CTASection() {
   return (
     <section
-      className="flex flex-col items-center py-28 container mx-auto px-5 tablet:px-0"
+      className="container mx-auto flex flex-col items-center px-5 tablet:px-0 py-28"
       id="get-started"
     >
       <SectionLabel>Get it now.</SectionLabel>
 
-      <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight text-balance text-center mt-8">
-        Code on your <br className="hidden tablet:block" />
+      <h2 className="mt-8 text-balance text-center font-medium tablet:text-5xl text-3xl text-foreground leading-tight">
+        Code on your <br className="tablet:block hidden" />
         clean visuals
       </h2>
 
-      <p className="leading-7 text-center text-foreground/60 mt-6 text-pretty">
+      <p className="mt-6 text-pretty text-center text-foreground/60 leading-7">
         Start code on your own code editor with our code theme,{" "}
-        <br className="hidden tablet:block" />
+        <br className="tablet:block hidden" />
         try the clean looks and also the simplicity.
       </p>
 
-      <div className="flex justify-center mt-16">
+      <div className="mt-16 flex justify-center">
         <div className="flex flex-col gap-3">
           {items.map(({ label, url }, i) => (
-            <Link
-              to={url}
+            <a
+              className="flex items-center gap-2"
+              href={url}
               key={i}
               target="_blank"
-              className="flex items-center gap-2"
             >
               <i className="fi fi-sr-bullet text-foreground/40" />
               {label}
-            </Link>
+            </a>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

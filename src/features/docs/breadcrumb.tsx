@@ -1,32 +1,31 @@
-import type { BreadScrumb } from "./docs-service"
-import { Link } from "react-router"
+import type { BreadScrumb } from "./docs-service";
 
-interface Props {
-  breadscrumbs: BreadScrumb[]
-}
+type Props = {
+  breadscrumbs: BreadScrumb[];
+};
 
 export function Breadcrumb({ breadscrumbs }: Props) {
   return (
-    <div className="flex items-center w-full text-sm text-foreground/60 gap-1">
-      <Link
-        to={"/docs"}
+    <div className="flex w-full items-center gap-1 text-foreground/60 text-sm">
+      <a
         className="transition-all duration-300 hover:text-foreground"
+        href={"/docs"}
       >
         Docs
-      </Link>
+      </a>
 
       {breadscrumbs.map(({ link, title }, i) => (
-        <div key={i} className="flex items-center gap-1">
+        <div className="flex items-center gap-1" key={i}>
           <i className="fi fi-rr-angle-small-right" />
 
-          <Link
-            to={link}
+          <a
             className="transition-all duration-300 hover:text-foreground"
+            href={link}
           >
             {title}
-          </Link>
+          </a>
         </div>
       ))}
     </div>
-  )
+  );
 }

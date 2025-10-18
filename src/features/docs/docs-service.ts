@@ -1,58 +1,51 @@
-import * as fs from "fs/promises"
-import path from "path"
-import { parseMarkdown } from "@shared/libs"
-import type { TocItem } from "remark-flexible-toc"
+import * as fs from "node:fs/promises";
+import path from "node:path";
+import { parseMarkdown } from "@shared/libs";
 
-interface DocFrontMatter {
-  title: string
-  description: string
-  publishedAt: string
-}
+type DocFrontMatter = {
+  title: string;
+  description: string;
+  publishedAt: string;
+};
 
-export interface DocDetail {
-  data: DocFrontMatter
-  content: any
-}
+export type DocDetail = {
+  data: DocFrontMatter;
+  content: any;
+};
 
-export interface BreadScrumb {
-  title: string
-  link: string
-}
+export type BreadScrumb = {
+  title: string;
+  link: string;
+};
 
-const DOCS_PATH = "/src/features/docs/contents"
+const DOCS_PATH = "/src/features/docs/contents";
 
 function parseSlug(slug: string): string {
-  return slug === "" ? "introduction" : slug
+  return slug === "" ? "introduction" : slug;
 }
 
 async function loadRawFile(slug: string) {
-  const filePath = path.join(process.cwd(), DOCS_PATH, `${slug}.md`)
-  const rawFile = await fs.readFile(filePath, "utf8")
+  const filePath = path.join(process.cwd(), DOCS_PATH, `${slug}.md`);
+  const rawFile = await fs.readFile(filePath, "utf8");
 
-  return rawFile
+  return rawFile;
 }
 export async function getBreadcrumb(slug: string): Promise<BreadScrumb[]> {
-  const parsedSlug = parseSlug(slug)
-  const rawFile = await loadRawFile(parsedSlug)
-  const { data } = parseMarkdown(rawFile)
+  const parsedSlug = parseSlug(slug);
+  const rawFile = await loadRawFile(parsedSlug);
+  const { data } = parseMarkdown(rawFile);
 
   return [
     {
       title: data.title,
       link: `/docs/${parsedSlug}`,
     },
-  ]
-}
-
-export async function getToc(slug: string): Promise<TocItem[]> {
-  const parsedSlug = parseSlug(slug)
-  const rawFile = await loadRawFile(parsedSlug)
-  return []
+  ];
 }
 
 export async function getDocDetail(slug: string): Promise<DocDetail> {
-  const parsedSlug = parseSlug(slug)
-  const rawFile = await loadRawFile(parsedSlug)
-  const { data, content } = parseMarkdown(rawFile)
-  return { data, content } as DocDetail
+  const parsedSlug = parseSlug(slug);
+  const rawFile = await loadRawFile(parsedSlug);
+  const { data, content } = parseMarkdown(rawFile);
+  return { data, content } as DocDetail;
 }

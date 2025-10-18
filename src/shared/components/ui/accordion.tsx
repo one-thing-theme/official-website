@@ -1,8 +1,8 @@
-import * as React from "react"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { mergeClass } from "@shared/libs"
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { mergeClass } from "@shared/libs";
+import type * as React from "react";
 
-const Accordion = AccordionPrimitive.Root
+const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = ({
   ref,
@@ -11,18 +11,18 @@ const AccordionItem = ({
 }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & {
   ref?: React.RefObject<React.ComponentRef<
     typeof AccordionPrimitive.Item
-  > | null>
+  > | null>;
 }) => (
   <AccordionPrimitive.Item
-    ref={ref}
     className={mergeClass(
-      "flex flex-col bg-secondary/80 w-full px-4 rounded-2xl",
-      className,
+      "flex w-full flex-col rounded-2xl bg-secondary/80 px-4",
+      className
     )}
+    ref={ref}
     {...props}
   />
-)
-AccordionItem.displayName = "AccordionItem"
+);
+AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = ({
   ref,
@@ -32,23 +32,23 @@ const AccordionTrigger = ({
 }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
   ref?: React.RefObject<React.ComponentRef<
     typeof AccordionPrimitive.Trigger
-  > | null>
+  > | null>;
 }) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
-      ref={ref}
       className={mergeClass(
-        "flex flex-1 text-left items-center justify-between py-4 text-sm transition-all [&[data-state=open]>i.fi]:rotate-180 cursor-pointer",
-        className,
+        "flex flex-1 cursor-pointer items-center justify-between py-4 text-left text-sm transition-all [&[data-state=open]>i.fi]:rotate-180",
+        className
       )}
+      ref={ref}
       {...props}
     >
       {children}
-      <i className="fi fi-rr-plus-small text-lg shrink-0 transition-transform duration-200 " />
+      <i className="fi fi-rr-plus-small shrink-0 text-lg transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
-)
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+);
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = ({
   ref,
@@ -58,17 +58,17 @@ const AccordionContent = ({
 }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> & {
   ref?: React.RefObject<React.ComponentRef<
     typeof AccordionPrimitive.Content
-  > | null>
+  > | null>;
 }) => (
   <AccordionPrimitive.Content
+    className="overflow-hidden text-foreground/60 text-sm leading-relaxed transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     ref={ref}
-    className="overflow-hidden text-sm text-foreground/60 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down leading-relaxed"
     {...props}
   >
-    <div className={mergeClass("pb-4 pt-0", className)}>{children}</div>
+    <div className={mergeClass("pt-0 pb-4", className)}>{children}</div>
   </AccordionPrimitive.Content>
-)
+);
 
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
+AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

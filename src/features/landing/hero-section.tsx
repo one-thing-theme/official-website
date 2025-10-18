@@ -1,39 +1,42 @@
-import { SectionLabel, Button } from "@shared/components"
-import { Link } from "react-router"
+import { Button, SectionLabel } from "@shared/components";
 
 export function HeroSection() {
   return (
     <section
-      className="flex flex-col items-center py-28 tablet:pt-52 container mx-auto px-5 tablet:px-0"
+      className="container mx-auto flex flex-col items-center px-5 tablet:px-0 py-28 tablet:pt-52"
       id="hero"
     >
       <SectionLabel>New release - bat supported.</SectionLabel>
 
-      <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight text-balance text-center mt-8">
-        The code themes <br className="hidden tablet:block" />
+      <h2 className="mt-8 text-balance text-center font-medium tablet:text-5xl text-3xl text-foreground leading-tight">
+        The code themes <br className="tablet:block hidden" />
         for simplicity
       </h2>
 
-      <p className="leading-7 tablet:w-8/12 laptop:w-5/12 text-center text-foreground/60 mt-6 text-pretty">
+      <p className="mt-6 laptop:w-5/12 tablet:w-8/12 text-pretty text-center text-foreground/60 leading-7">
         Powering your coding productivity with simple design.{" "}
-        <br className="hidden tablet:block" />
+        <br className="tablet:block hidden" />
         Never miss the code from color distractions.
       </p>
 
-      <div className="flex items-center mt-16 gap-3">
+      <div className="mt-16 flex items-center gap-3">
         <Button asChild className="transition-all duration-300 hover:scale-95">
-          <Link to={"/#get-started"}>Download</Link>
+          <a href={"/#get-started"}>Download</a>
         </Button>
         <Button
-          variant={"secondary"}
           asChild
           className="transition-all duration-300 hover:scale-95"
+          variant={"secondary"}
         >
-          <Link to={"https://github.com/one-thing-theme"} target="_blank">
+          <a
+            href={"https://github.com/one-thing-theme"}
+            rel="noopener"
+            target="_blank"
+          >
             Github
-          </Link>
+          </a>
         </Button>
       </div>
     </section>
-  )
+  );
 }

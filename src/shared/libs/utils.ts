@@ -1,23 +1,23 @@
-import { clsx } from "clsx"
-import type { ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-import dayjs from "dayjs"
-import matter from "gray-matter"
-import type { GrayMatterFile } from "gray-matter"
+import type { ClassValue } from "clsx";
+import { clsx } from "clsx";
+import dayjs from "dayjs";
+import type { GrayMatterFile } from "gray-matter";
+import matter from "gray-matter";
+import { twMerge } from "tailwind-merge";
 
 export function mergeClass(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function formatReadableDate(
   stringDate: string,
-  format?: string,
+  format?: string
 ): string {
-  const formattedDate = dayjs(stringDate).format(format)
-  return formattedDate
+  const formattedDate = dayjs(stringDate).format(format);
+  return formattedDate;
 }
 
 export function parseMarkdown(rawFile: any): GrayMatterFile<any> {
-  const parsedFile = matter(rawFile)
-  return parsedFile
+  const parsedFile = matter(rawFile);
+  return parsedFile;
 }

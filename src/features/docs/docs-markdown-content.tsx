@@ -1,24 +1,22 @@
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
-import rehypeRaw from "rehype-raw"
-import { ContentImage } from "@shared/components"
+import { ContentImage } from "@shared/components";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
-interface Props {
-  content: any
-}
+type Props = {
+  content: any;
+};
 
 export function DocsMarkdownContent({ content }: Props) {
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeRaw]}
       components={{
-        img: ({ ...props }) => {
-          return <ContentImage {...props} />
-        },
+        img: ({ ...props }) => <ContentImage {...props} />,
       }}
+      rehypePlugins={[rehypeRaw]}
+      remarkPlugins={[remarkGfm]}
     >
       {content}
     </ReactMarkdown>
-  )
+  );
 }

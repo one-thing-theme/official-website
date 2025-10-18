@@ -1,33 +1,33 @@
 import {
-  SectionLabel,
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
-} from "@shared/components"
+  SectionLabel,
+} from "@shared/components";
 
-export interface FAQData {
-  title: string
-  content: string
-}
+export type FAQData = {
+  title: string;
+  content: string;
+};
 
-interface FAQItemProps {
-  data: FAQData
-  position: number
-}
+type FAQItemProps = {
+  data: FAQData;
+  position: number;
+};
 
 export function FAQItem({ data, position }: FAQItemProps) {
-  const { title, content } = data
+  const { title, content } = data;
 
   return (
     <AccordionItem
+      className="hover:-translate-y-1 transition-all duration-300"
       value={`item-${position}`}
-      className="transition-all duration-300 hover:-translate-y-1"
     >
       <AccordionTrigger>{title}</AccordionTrigger>
       <AccordionContent>{content}</AccordionContent>
     </AccordionItem>
-  )
+  );
 }
 
 const faqs = [
@@ -76,37 +76,37 @@ const faqs = [
     content:
       "You can report issues or provide feedback by creating a new issue in the project's GitHub repository. We appreciate your input!",
   },
-]
+];
 
 export function FAQSection(): React.ReactElement {
   return (
-    <section className="flex flex-col items-center py-28 container mx-auto px-5 tablet:px-0">
+    <section className="container mx-auto flex flex-col items-center px-5 tablet:px-0 py-28">
       <SectionLabel>FAQs</SectionLabel>
 
-      <h2 className="text-3xl tablet:text-5xl text-foreground font-medium leading-tight text-balance text-center mt-8">
-        Most asked <br className="hidden tablet:block" />
+      <h2 className="mt-8 text-balance text-center font-medium tablet:text-5xl text-3xl text-foreground leading-tight">
+        Most asked <br className="tablet:block hidden" />
         questions
       </h2>
 
-      <p className="leading-7 text-center text-foreground/60 mt-6 text-pretty">
+      <p className="mt-6 text-pretty text-center text-foreground/60 leading-7">
         Most asked questions by developers around the world.{" "}
-        <br className="hidden tablet:block" />
+        <br className="tablet:block hidden" />
         Find what matters and need to know here.
       </p>
 
-      <div className="flex justify-center items-center mt-16 w-full">
-        <div className="flex justify-center tablet:w-10/12 laptop:w-5/12">
+      <div className="mt-16 flex w-full items-center justify-center">
+        <div className="flex laptop:w-5/12 tablet:w-10/12 justify-center">
           <Accordion
-            type="single"
+            className="flex w-full flex-col gap-2"
             collapsible
-            className="flex flex-col gap-2 w-full"
+            type="single"
           >
             {faqs.map((data, index) => (
-              <FAQItem position={index} data={data} key={index} />
+              <FAQItem data={data} key={index} position={index} />
             ))}
           </Accordion>
         </div>
       </div>
     </section>
-  )
+  );
 }

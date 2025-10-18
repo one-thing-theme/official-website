@@ -1,7 +1,7 @@
-import { ChangelogItem } from "./changelog-item"
-import logs from "./changelog-data.json"
+import logs from "./changelog-data.json" with { type: "json" };
+import { ChangelogItem } from "./changelog-item";
 
-const reversedLogs = [...logs].reverse()
+const reversedLogs = [...logs].reverse();
 
 export function ChangelogList() {
   return (
@@ -10,5 +10,5 @@ export function ChangelogList() {
         <ChangelogItem data={log} key={index} />
       ))}
     </ul>
-  )
+  );
 }

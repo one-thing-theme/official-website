@@ -1,1 +1,1 @@
-export * from "./changelog-section"
+export * from "./changelog-section";
